@@ -7,7 +7,7 @@ Server-side D3 with ease
 
 ### Example usage:
 
-```
+```javascript
 var D3Node = require('d3-node');
 var d3n = new D3Node('#chart','<div id="container"><div id="chart">TEST</div></div>');
 d3n.d3Element.style("background-color", "black");
