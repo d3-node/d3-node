@@ -1,6 +1,8 @@
 # D3-Node
 Server-side D3 with ease
 
+[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/bradoyler/d3-node)
+
 #### Notice: work in-progress, feedback welcome.
 
 [![NPM](https://nodei.co/npm/d3-node.png?downloads=true&downloadRank=true)](https://nodei.co/npm/d3-node/)
