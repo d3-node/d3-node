@@ -1,0 +1,32 @@
+{
+  "name": "d3-node",
+  "version": "0.0.1",
+  "description": "Server-side D3 with ease",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -R List"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bradoyler/d3-node.git"
+  },
+  "keywords": [
+    "d3",
+    "isomorphic",
+    "maps",
+    "charts"
+  ],
+  "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
+  "license": "MIT",
+  "dependencies": {
+    "d3": "4.1.1",
+    "jsdom": "9.4.1"
+  },
+  "devDependencies": {
+    "mocha": "2.5.3"
+  }
+  "bugs": {
+    "url": "https://github.com/bradoyler/d3-node/issues"
+  },
+  "homepage": "https://github.com/bradoyler/d3-node"
+}
