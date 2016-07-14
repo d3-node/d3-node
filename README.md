@@ -11,10 +11,11 @@ Server-side D3 with ease
 
 ```javascript
 var D3Node = require('d3-node');
+
 var selector = '#chart';
 var containerMarkup = '<div id="container"><div id="chart">TEST</div></div>';
 
-var d3n = new D3Node(selector, containerMarkup); // initializes D3 root Element
+var d3n = new D3Node(selector, containerMarkup); // initializes D3 with container element
 
 d3n.d3Element.style("background-color", "black"); // set bg color on #chart
 
@@ -27,3 +28,10 @@ d3n.html() // output: <div id="container"><div id="chart" style="background-colo
 ```
 $ npm test
 ```
+
+### TODOs:
+
+- example script to building a map
+- example usage with Gulp
+- more tests
+- option to omit container, simplify init params
