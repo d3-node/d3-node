@@ -1,7 +1,7 @@
 var fs = require('fs');
 var d3 = require('d3');
 var topojson = require('topojson');
-var topo = require('./va-counties.json');
+var topo = require('./data/va-counties.json');
 var D3Node = require('./../index');
 
 // adapted from: http://bl.ocks.org/mbostock/7061976
@@ -50,6 +50,6 @@ svg.append("path")
   .attr("class", "county-border")
   .attr("d", path);
 
-fs.writeFile('examples/va-map.html', d3n.html(), function () {
-  console.log('Done. Open "example/va-map.html" in your browser');
+fs.writeFile('examples/map-counties.html', d3n.html(), function () {
+  console.log('Done. Open "example/map-counties.html" in your browser');
 });

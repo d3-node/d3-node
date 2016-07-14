@@ -29,17 +29,14 @@ d3n.html() // output: <div id="container"><div id="chart" style="background-colo
 $ npm test
 ```
 
-### Run examples
+### [See examples](examples/README.md)
 
-```
-$ node examples/county-map
-```
 
 ### TODOs:
 
-- Add more example
-- example usage with Gulp
-- more tests
+- Add more examples
+- create Gulp task
+- more mocha tests
 - option to omit container, simplify init params
-- function to output svg only
-- injecting css into html output
+- function to output svg only `svg()`
+- way to inject css file into html output
