@@ -29,9 +29,17 @@ d3n.html() // output: <div id="container"><div id="chart" style="background-colo
 $ npm test
 ```
 
+### Run examples
+
+```
+$ node examples/county-map
+```
+
 ### TODOs:
 
-- example script to building a map
+- Add more example
 - example usage with Gulp
 - more tests
 - option to omit container, simplify init params
+- function to output svg only
+- injecting css into html output
