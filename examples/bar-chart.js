@@ -5,9 +5,9 @@ var D3Node = require('./../index');
 
 var markup = '<div id="container"><h2>Bar Chart</h2>' +
   '<style>.bar {fill: steelblue;} .bar:hover {fill: brown;} .axis {font: 10px sans-serif;} .axis path,.axis line {fill: none;stroke: #000;shape-rendering: crispEdges;} .x.axis path {display: none;}</style>' +
-  '<div id="us-map"></div></div>';
+  '<div id="chart"></div></div>';
 
-var selector = '#us-map';
+var selector = '#chart';
 
 var d3n = new D3Node(selector, markup);
 

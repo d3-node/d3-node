@@ -40,3 +40,14 @@ $ node examples/map-us
 
 
 
+### Pie Chart
+
+#### Run it
+
+```
+$ node examples/pie-chart
+```
+
+#### Output
+
+![piechart](https://cloud.githubusercontent.com/assets/425966/16859544/b840a4a6-49fd-11e6-8ca1-fbe03bb76400.png)
