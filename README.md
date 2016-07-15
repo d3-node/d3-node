@@ -25,7 +25,7 @@ d3n.html() // returns: <html><head></head><body><span></span></body></html>
 
 Setting container & insertion point via selector
 
-```
+```javascript
 var options = {selector: '#chart'}
 options.container = '<div id="container"><div id="chart"></div></div>';
 
