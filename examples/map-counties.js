@@ -10,9 +10,10 @@ var markup = '<div id="container"><h2>Map of Virginia</h2>' +
   '<style>.county-border {fill: none;stroke: #fff;stroke-width: 1.01px;stroke-linejoin: round; stroke-linecap: round;}</style>'+
   '<div id="chart"></div></div>';
 
-var selector = '#chart';
+var options = {selector:'#chart'};
+options.container = markup;
 
-var d3n = new D3Node(selector, markup);
+var d3n = new D3Node(options);
 
 var width = 960,
   height = 500;

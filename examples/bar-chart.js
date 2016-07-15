@@ -7,9 +7,10 @@ var markup = '<div id="container"><h2>Bar Chart</h2>' +
   '<style>.bar {fill: steelblue;} .bar:hover {fill: brown;} .axis {font: 10px sans-serif;} .axis path,.axis line {fill: none;stroke: #000;shape-rendering: crispEdges;} .x.axis path {display: none;}</style>' +
   '<div id="chart"></div></div>';
 
-var selector = '#chart';
+var options = {selector:'#chart'};
+options.container = markup;
 
-var d3n = new D3Node(selector, markup);
+var d3n = new D3Node(options);
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
 ///-- start D3 code

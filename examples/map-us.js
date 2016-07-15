@@ -8,11 +8,12 @@ var D3Node = require('./../index');
 
 var markup = '<div id="container"><h2>US Map</h2>' +
   '<style>.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}</style>'+
-  '<div id="us-map"></div></div>';
+  '<div id="chart"></div></div>';
 
-var selector = '#us-map';
+var options = {selector:'#chart'};
+options.container = markup;
 
-var d3n = new D3Node(selector, markup);
+var d3n = new D3Node(options);
 
 var width = 960,
   height = 500;

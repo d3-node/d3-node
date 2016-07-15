@@ -7,9 +7,10 @@ var markup = '<div id="container"><h2>Pie Chart</h2>' +
   '<style>.arc text {font: 10px sans-serif;text-anchor: middle;} .arc path {stroke: #fff;}</style>' +
   '<div id="chart"></div></div>';
 
-var selector = '#chart';
+var options = {selector:'#chart'};
+options.container = markup;
 
-var d3n = new D3Node(selector, markup);
+var d3n = new D3Node(options);
 
 // adapted from: https://bl.ocks.org/mbostock/3887235
 ///-- start D3 code
