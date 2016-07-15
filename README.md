@@ -12,14 +12,24 @@ Server-side D3 with ease
 ```javascript
 var D3Node = require('d3-node');
 
-var selector = '#chart';
-var containerMarkup = '<div id="container"><div id="chart">TEST</div></div>';
+//-- with defaults
+var d3n = new D3Node(); // initializes D3 with container element
 
-var d3n = new D3Node(selector, containerMarkup); // initializes D3 with container element
+d3n.d3Element.append('span'); // insert span tag
 
-d3n.d3Element.style("background-color", "black"); // set bg color on #chart
+d3n.html() // returns: <html><head></head><body><span></span></body></html>
 
-d3n.html() // output: <div id="container"><div id="chart" style="background-color: black;">TEST</div></div>
+
+//-- setting container & selection
+
+var options = {selector: '#chart'}
+options.container = '<div id="container"><div id="chart"></div></div>';
+
+var d3n = new D3Node(options); // initializes D3 with container element
+
+d3n.d3Element.append('span'); // insert span tag into #chart
+
+d3n.html() // returns: <div id="container"><div id="chart"><span></span></div></div>
 
 ```
 
@@ -34,9 +44,7 @@ $ npm test
 
 ### TODOs:
 
-- Add more examples
+- Add more examples: (remote data, world map)
 - create Gulp task
-- more mocha tests
-- option to omit container, simplify init params
-- function to output svg only `svg()`
+- simplify init params, remove need for container markup 
 - way to inject css file into html output
