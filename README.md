@@ -49,6 +49,7 @@ $ npm test
 ### TODOs:
 
 - Add more examples: (remote data, world map)
-- create Gulp task
+- Create Gulp task
 - Add option to inject css/js into html output
-- Output as PNG
+- Add option to embed css into svg
+- Method to output PNG
