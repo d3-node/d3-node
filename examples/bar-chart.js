@@ -1,14 +1,11 @@
-var fs = require('fs');
-var d3 = require('d3');
-var tsvString = fs.readFileSync('examples/data/barchart.tsv').toString();
-var D3Node = require('./../index');
+const fs = require('fs');
+const d3 = require('d3');
+const tsvString = fs.readFileSync('examples/data/barchart.tsv').toString();
+const D3Node = require('./../index');
 
-var markup = '<div id="container"><h2>Bar Chart</h2>' +
-  '<style>.bar {fill: steelblue;} .bar:hover {fill: brown;} .axis {font: 10px sans-serif;} .axis path,.axis line {fill: none;stroke: #000;shape-rendering: crispEdges;} .x.axis path {display: none;}</style>' +
-  '<div id="chart"></div></div>';
-
-var options = {selector:'#chart'};
-options.container = markup;
+const styles = '.bar{fill: steelblue;} .bar:hover{fill: brown;} .axis{font: 10px sans-serif;} .axis path,.axis line{fill: none;stroke: #000;shape-rendering: crispEdges;} .x.axis path{display: none;}';
+const markup = '<div id="container"><h2>Bar Chart</h2><div id="chart"></div></div>';
+var options = {selector:'#chart', svgStyles:styles, container:markup};
 
 var d3n = new D3Node(options);
 
@@ -34,7 +31,7 @@ var yAxis = d3.svg.axis()
   .orient("left")
   .ticks(10, "%");
 
-var svg = d3n.d3Element.append("svg")
+var svg = d3n.createSVG()
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -79,14 +76,7 @@ svg.selectAll(".bar")
     return height - y(d.frequency);
   });
 
-
-function type(d) {
-  d.frequency = +d.frequency;
-  return d;
-}
-
 /// -- end D3 code
 
-fs.writeFile('examples/bar-chart.html', d3n.html(), function () {
-  console.log('Done. Open "example/bar-chart.html" in your browser');
-});
+// create output files
+require('./lib/output')('bar-chart', d3n);

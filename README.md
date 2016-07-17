@@ -37,6 +37,16 @@ d3n.html() // returns: <html><head></head><body><div id="container"><div id="cha
 
 ```
 
+SVG creation
+
+```javascript
+var d3n = new D3Node(); // initializes D3 with container element
+
+d3n.createSVG().append('g');  // create SVG w/ 'g' tag
+
+d3n.svgString() // returns: <svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+```
+
 ### Run Tests:
 
 ```
@@ -51,5 +61,3 @@ $ npm test
 - Add more examples: (remote data, world map)
 - Create Gulp task
 - Add option to inject css/js into html output
-- Add option to embed css into svg
-- Method to output PNG

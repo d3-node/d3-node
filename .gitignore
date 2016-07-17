@@ -1,5 +1,5 @@
 node_modules/*
 .idea/
 npm-debug.log
-
-examples/*.html
+examples/dist/*.html
+examples/dist/*.png
