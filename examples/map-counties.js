@@ -7,7 +7,7 @@ const D3Node = require('./../index');
 
 const markup = '<div id="container"><h2>Map of Virginia</h2><div id="chart"></div></div>';
 const styles = '.county-border {fill: none;stroke: #fff;stroke-width: 1.01px;stroke-linejoin: round; stroke-linecap: round;}';
-var options = {selector:'#chart', styles:styles, container:markup};
+var options = {selector:'#chart', svgStyles:styles, container:markup};
 
 var d3n = new D3Node(options);
 

@@ -4,7 +4,7 @@ const us = require('./data/us.json');
 const D3Node = require('./../index');
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
-var options = {styles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}'};
+var options = {svgStyles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}'};
 
 var d3n = new D3Node(options);
 

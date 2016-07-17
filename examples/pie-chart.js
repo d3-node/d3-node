@@ -5,7 +5,7 @@ const D3Node = require('./../index');
 
 const markup = '<div id="container"><h2>Pie Chart</h2><div id="chart"></div></div>';
 const styles = '.arc text {font: 10px sans-serif;text-anchor: middle;} .arc path {stroke: #fff;}';
-var options = {selector:'#chart', styles:styles, container:markup};
+var options = {selector:'#chart', svgStyles:styles, container:markup};
 
 var d3n = new D3Node(options);
 

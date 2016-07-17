@@ -7,7 +7,7 @@ const population = d3.csv.parse(csvString);
 const D3Node = require('./../index');
 
 // adapted from: https://bl.ocks.org/bricedev/97c53d6ed168902239f7
-var options = {styles:'svg{font: 10px sans-serif;}.border{stroke-width:.3px;fill:none;stroke:#333;}.caption{font-weight: bold;}.key path {display: none;}.key line{stroke:#000;shape-rendering:crispEdges;}'};
+var options = {svgStyles:'svg{font: 10px sans-serif;}.border{stroke-width:.3px;fill:none;stroke:#333;}.caption{font-weight: bold;}.key path {display: none;}.key line{stroke:#000;shape-rendering:crispEdges;}'};
 var d3n = new D3Node(options);
 
 //--start D3 code ----- //

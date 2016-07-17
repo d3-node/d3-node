@@ -56,14 +56,14 @@ describe('Set D3 styles (2 instances)', function () {
   });
 });
 
-describe('createSVG (w/ styles) 1', function () {
+describe('createSVG (w/ svgStyles) 1', function () {
 
   it('should return svg', function () {
 
     var options = {
       selector: '#chart',
       container: '<div id="container"><div id="chart"></div></div>',
-      styles: '.test1{}'
+      svgStyles: '.test1{}'
     };
     var d3n = new D3Node(options);
 
@@ -76,14 +76,14 @@ describe('createSVG (w/ styles) 1', function () {
 
 });
 
-describe('createSVG (w/ styles) 2', function () {
+describe('createSVG (w/ svgStyles) 2', function () {
 
   it('should return svg', function () {
 
     var options = {
       selector: '#chart',
       container: '<div id="container"><div id="chart"></div></div>',
-      styles: '.test2{}'
+      svgStyles: '.test2{}'
     };
     var d3n = new D3Node(options);
 
