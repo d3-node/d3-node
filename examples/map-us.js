@@ -4,13 +4,7 @@ const us = require('./data/us.json');
 const D3Node = require('./../index');
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
-
-var markup = '<div id="container"><h2>US Map</h2>' +
-  '<style>.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}</style>'+
-  '<div id="chart"></div></div>';
-
-var options = {selector:'#chart'};
-options.container = markup;
+var options = {styles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}'};
 
 var d3n = new D3Node(options);
 
@@ -30,4 +24,4 @@ var svg = d3n.createSVG()
 
 
 // create output files
-require('./output')('map-us', d3n);
+require('./lib/output')('map-us', d3n);

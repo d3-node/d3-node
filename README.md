@@ -63,4 +63,3 @@ $ npm test
 - Add more examples: (remote data, world map)
 - Create Gulp task
 - Add option to inject css/js into html output
-- Add option to embed css into svg

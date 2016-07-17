@@ -56,16 +56,40 @@ describe('Set D3 styles (2 instances)', function () {
   });
 });
 
-describe('svg method ', function () {
+describe('createSVG (w/ styles) 1', function () {
 
   it('should return svg', function () {
 
-    var options = {selector: '#chart', container: '<div id="container"><div id="chart"></div></div>'};
+    var options = {
+      selector: '#chart',
+      container: '<div id="container"><div id="chart"></div></div>',
+      styles: '.test1{}'
+    };
     var d3n = new D3Node(options);
 
     var svg = d3n.createSVG().append("g");
 
-    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>';
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>';
+    var actual = d3n.svgString();
+    assert.equal(expected, actual);
+  });
+
+});
+
+describe('createSVG (w/ styles) 2', function () {
+
+  it('should return svg', function () {
+
+    var options = {
+      selector: '#chart',
+      container: '<div id="container"><div id="chart"></div></div>',
+      styles: '.test2{}'
+    };
+    var d3n = new D3Node(options);
+
+    var svg = d3n.createSVG().append("g");
+
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>';
     var actual = d3n.svgString();
     assert.equal(expected, actual);
   });

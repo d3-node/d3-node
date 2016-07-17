@@ -3,12 +3,9 @@ const d3 = require('d3');
 const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString();
 const D3Node = require('./../index');
 
-const markup = '<div id="container"><h2>Pie Chart</h2>' +
-  '<style>.arc text {font: 10px sans-serif;text-anchor: middle;} .arc path {stroke: #fff;}</style>' +
-  '<div id="chart"></div></div>';
-
-var options = {selector:'#chart'};
-options.container = markup;
+const markup = '<div id="container"><h2>Pie Chart</h2><div id="chart"></div></div>';
+const styles = '.arc text {font: 10px sans-serif;text-anchor: middle;} .arc path {stroke: #fff;}';
+var options = {selector:'#chart', styles:styles, container:markup};
 
 var d3n = new D3Node(options);
 
@@ -64,12 +61,7 @@ g.append("text")
     return d.data.age;
   });
 
-function type(d) {
-  d.population = +d.population;
-  return d;
-}
-
 /// -- end D3 code
 
 // create output files
-require('./output')('pie-chart', d3n);
+require('./lib/output')('pie-chart', d3n);

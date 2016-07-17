@@ -5,12 +5,9 @@ const D3Node = require('./../index');
 
 // adapted from: http://bl.ocks.org/mbostock/7061976
 
-const markup = '<div id="container"><h2>Map of Virginia</h2>' +
-  '<style>.county-border {fill: none;stroke: #fff;stroke-width: 1.01px;stroke-linejoin: round; stroke-linecap: round;}</style>'+
-  '<div id="chart"></div></div>';
-
-var options = {selector:'#chart'};
-options.container = markup;
+const markup = '<div id="container"><h2>Map of Virginia</h2><div id="chart"></div></div>';
+const styles = '.county-border {fill: none;stroke: #fff;stroke-width: 1.01px;stroke-linejoin: round; stroke-linecap: round;}';
+var options = {selector:'#chart', styles:styles, container:markup};
 
 var d3n = new D3Node(options);
 
@@ -52,4 +49,4 @@ svg.append("path")
 
 
 // create output files
-require('./output')('map-counties', d3n);
+require('./lib/output')('map-counties', d3n);
