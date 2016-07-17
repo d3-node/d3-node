@@ -52,4 +52,3 @@ $ npm test
 - Create Gulp task
 - Add option to inject css/js into html output
 - Add option to embed css into svg
-- Method to output PNG

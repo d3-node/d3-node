@@ -15,7 +15,7 @@ describe('Append span (defaults)', function () {
   });
 
   it('should not have svg tag', function () {
-    var svg = d3n.svg();
+    var svg = d3n.svgString();
     assert.equal('', svg);
   });
 
@@ -63,10 +63,10 @@ describe('svg method ', function () {
     var options = {selector: '#chart', container: '<div id="container"><div id="chart"></div></div>'};
     var d3n = new D3Node(options);
 
-    var svg = d3n.d3Element.append("svg").append("g");
+    var svg = d3n.createSVG().append("g");
 
-    var expected = '<svg><g></g></svg>';
-    var actual = d3n.svg();
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>';
+    var actual = d3n.svgString();
     assert.equal(expected, actual);
   });
 
@@ -75,10 +75,10 @@ describe('svg method ', function () {
 describe('svg method (defaults)', function () {
 
   var d3n = new D3Node();
-  var svg = d3n.d3Element.append("svg").append("g");
+  var svg = d3n.createSVG().append("g");
 
   it('should return svg', function () {
-    assert.equal('<svg><g></g></svg>', d3n.svg());
+    assert.equal('<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>', d3n.svgString());
   });
 
 });
@@ -87,17 +87,17 @@ describe('svg method w/o append', function () {
 
   var d3n = new D3Node();
   it('should return empty', function () {
-    assert.equal('', d3n.svg());
+    assert.equal('', d3n.svgString());
   });
 });
 
 describe('svg method via auto-init', function () {
 
   var d3n = D3Node();
-  var svg = d3n.d3Element.append("svg").append("g");
+  var svg = d3n.createSVG().append("g").text('test');
 
   it('should return svg element', function () {
-    assert.equal('<svg><g></g></svg>', d3n.svg());
+    assert.equal('<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>', d3n.svgString());
   });
 
 });

@@ -22,20 +22,24 @@ function D3Node(opts) {
   }
 
   let rootElement = window.document.querySelector(options.selector);
-
-  this.html = function () {
-    return d3.select(window.document.documentElement).node().outerHTML;
-  };
-
-  this.svg = function () {
-    if (d3.select(window.document.documentElement).select('svg').node()) {
-      return d3.select(window.document.documentElement).select('svg').node().outerHTML;
-    }
-    return '';
-
-  };
-
+  this.document = window.document;
   this.d3Version = d3.version;
-
   this.d3Element = d3.select(rootElement);
 }
+
+D3Node.prototype.createSVG = function () {
+  return this.d3Element.append("svg")
+    .attr("xmlns","http://www.w3.org/2000/svg");
+};
+
+D3Node.prototype.svgString = function () {
+  if (d3.select(this.document.documentElement).select('svg').node()) {
+    return d3.select(this.document.documentElement).select('svg').node().outerHTML;
+  }
+  return '';
+};
+
+D3Node.prototype.html = function () {
+  return d3.select(this.document.documentElement).node().outerHTML;
+};
+

@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "mocha": "2.5.3",
-    "topojson": "1.6.26"
+    "topojson": "1.6.26",
+    "svg2png": "3.0.0"
   },
   "bugs": {
     "url": "https://github.com/bradoyler/d3-node/issues"

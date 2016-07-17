@@ -1,10 +1,10 @@
-var fs = require('fs');
-var d3 = require('d3');
-var topojson = require('topojson');
-var france = require('./data/france.json');
-var csvString = fs.readFileSync('examples/data/fr-population.csv').toString();
-var population = d3.csv.parse(csvString);
-var D3Node = require('./../index');
+const fs = require('fs');
+const d3 = require('d3');
+const topojson = require('topojson');
+const france = require('./data/france.json');
+const csvString = fs.readFileSync('examples/data/fr-population.csv').toString();
+const population = d3.csv.parse(csvString);
+const D3Node = require('./../index');
 
 // adapted from: https://bl.ocks.org/bricedev/97c53d6ed168902239f7
 
@@ -43,7 +43,7 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
   .projection(projection);
 
-var svg = d3n.d3Element.append("svg")
+var svg = d3n.createSVG()
   .attr("width", width)
   .attr("height", height);
 
@@ -89,6 +89,5 @@ svg.append("path")
 
 //--end D3 code ----- //
 
-fs.writeFile('examples/map-france.html', d3n.html(), function () {
-  console.log('Done. Open "example/map-france.html" in your browser');
-});
+// create output files
+require('./output')('map-choropleth', d3n);

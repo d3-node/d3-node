@@ -1,8 +1,7 @@
-var fs = require('fs');
-var d3 = require('d3');
-var topojson = require('topojson');
-var us = require('./data/us.json');
-var D3Node = require('./../index');
+const d3 = require('d3');
+const topojson = require('topojson');
+const us = require('./data/us.json');
+const D3Node = require('./../index');
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
 
@@ -21,15 +20,14 @@ var width = 960,
 var path = d3.geo.path()
   .projection(null);
 
-var svg = d3n.d3Element.append("svg")
+var svg = d3n.createSVG()
   .attr("width", width)
-  .attr("height", height);
+  .attr("height", height)
+  .append("path")
+  .datum(topojson.mesh(us))
+  .attr("class", "mesh")
+  .attr("d", path);
 
-  svg.append("path")
-    .datum(topojson.mesh(us))
-    .attr("class", "mesh")
-    .attr("d", path);
 
-fs.writeFile('examples/map-us.html', d3n.html(), function () {
-  console.log('Done. Open "example/map-us.html" in your browser');
-});
+// create output files
+require('./output')('map-us', d3n);
