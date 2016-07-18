@@ -16,9 +16,9 @@ Server-side D3 with ease
 ```javascript
 var D3Node = require('d3-node');
 
-var d3n = new D3Node(); // initializes D3 with container element
+var d3n = new D3Node(); // initializes D3 on <body> 
 
-d3n.d3Element.append('span'); // insert span tag
+d3n.d3Element.append('span'); // inserts span tag
 
 d3n.html() // returns: <html><head></head><body><span></span></body></html>
 ```
@@ -45,15 +45,17 @@ var d3n = new D3Node(); // initializes D3 with container element
 d3n.createSVG().append('g');  // create SVG w/ 'g' tag
 
 d3n.svgString() // returns: <svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+
+d3n.html() // returns: <html><head></head><body><svg xmlns="http://www.w3.org/2000/svg"><g></g></svg></body></html>
 ```
+
+### [See examples for more...](examples)
 
 ### Run Tests:
 
 ```
 $ npm test
 ```
-
-### [See examples](examples)
 
 
 ### TODOs:
