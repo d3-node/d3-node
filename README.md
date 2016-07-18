@@ -5,6 +5,8 @@ Server-side D3 with ease
 
 [![NPM](https://nodei.co/npm/d3-node.png?downloads=true&downloadRank=true)](https://nodei.co/npm/d3-node/)
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 ### Why?
 
 - Performance: pre-rendering allows offloading data processing, and network overhead
