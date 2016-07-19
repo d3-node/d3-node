@@ -1,14 +1,13 @@
 'use strict'
 const d3 = require('d3')
-const jsdom = require('jsdom')
-const doc = jsdom.jsdom
+const jsDom = require('jsdom')
 
 module.exports = D3Node
 
 const defaults = {
-  selector: 'body',
-  container: '',
-  svgStyles: ''
+  selector: '',  // selects base D3 Element
+  container: '', // markup inserted in body
+  svgStyles: ''  // embedded svg stylesheets
 }
 
 function D3Node (opts) {
@@ -18,18 +17,22 @@ function D3Node (opts) {
     return new D3Node(options)
   }
 
-  let window = jsdom.jsdom().defaultView
-
-  if (options.container) { // insert container markup, if supplied
-    window = doc(options.container).defaultView
+  // setup DOM
+  let document = jsDom.jsdom()
+  if (options.container) {
+    document = jsDom.jsdom(options.container)
   }
 
-  let rootElement = window.document.querySelector(options.selector)
+  // setup d3 selection
+  let d3Element = d3.select(document.body)
+  if (options.selector) {
+    d3Element = d3Element.select(options.selector)
+  }
 
   this.options = options
-  this.document = window.document
+  this.document = document
   this.d3Version = d3.version
-  this.d3Element = d3.select(rootElement)
+  this.d3Element = d3Element
 }
 
 D3Node.prototype.createSVG = function () {
@@ -46,8 +49,8 @@ D3Node.prototype.createSVG = function () {
 }
 
 D3Node.prototype.svgString = function () {
-  if (d3.select(this.document.documentElement).select('svg').node()) {
-    return d3.select(this.document.documentElement).select('svg').node().outerHTML
+  if (this.d3Element.select('svg').node()) {
+    return this.d3Element.select('svg').node().outerHTML
   }
   return ''
 }

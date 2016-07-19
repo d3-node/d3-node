@@ -11,12 +11,12 @@ describe('Append span (defaults)', function () {
   it('should have span tag', function () {
     var expected = '<html><head></head><body><span></span></body></html>'
     var actual = d3n.html()
-    assert.equal(expected, actual)
+    assert.equal(actual, expected)
   })
 
   it('should not have svg tag', function () {
     var svg = d3n.svgString()
-    assert.equal('', svg)
+    assert.equal(svg, '')
   })
 })
 
@@ -28,7 +28,7 @@ describe('Append span (w/ container)', function () {
   it('should have span tag', function () {
     var expected = '<html><head></head><body><div id="container"><div id="chart"><span></span></div></div></body></html>'
     var actual = d3n.html()
-    assert.equal(expected, actual)
+    assert.equal(actual, expected)
   })
 })
 
@@ -44,11 +44,11 @@ describe('Set D3 styles (2 instances)', function () {
   var actual = d3a.html()
 
   it('should have color:red', function () {
-    assert.equal(expected, actual)
+    assert.equal(actual, expected)
   })
 
   it('should have color:black', function () {
-    assert.equal(expected1, actual1)
+    assert.equal(actual1, expected1)
   })
 })
 
@@ -66,7 +66,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(expected, actual)
+    assert.equal(actual, expected)
   })
 })
 
@@ -84,7 +84,7 @@ describe('createSVG (w/ svgStyles) 2', function () {
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(expected, actual)
+    assert.equal(actual, expected)
   })
 })
 
@@ -93,14 +93,14 @@ describe('svg method (defaults)', function () {
   d3n.createSVG().append('g')
 
   it('should return svg', function () {
-    assert.equal('<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>', d3n.svgString())
+    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>')
   })
 })
 
 describe('svg method w/o append', function () {
   var d3n = new D3Node()
   it('should return empty', function () {
-    assert.equal('', d3n.svgString())
+    assert.equal(d3n.svgString(), '')
   })
 })
 
@@ -109,6 +109,13 @@ describe('svg method via auto-init', function () {
   d3n.createSVG().append('g').text('test')
 
   it('should return svg element', function () {
-    assert.equal('<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>', d3n.svgString())
+    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>')
+  })
+})
+
+describe('d3Version', function () {
+  var d3n = D3Node()
+  it('should be 3.x', function () {
+    assert.equal(d3n.d3Version.split('.')[0], '3')
   })
 })
