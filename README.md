@@ -9,44 +9,51 @@ Server-side D3 with ease
 
 - Performance: pre-rendering allows offloading data processing, and network overhead
 - Node.js + npm: take advantage of the entire ecosystem
-- Static rendering of SVGs
+- Static rendering of [Data-Driven Documents](https://d3js.org/)
+- [Embedded SVG stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
 
 ### Usage:
 
 ```javascript
-var D3Node = require('d3-node')
-
-var d3n = new D3Node() // initializes D3 on <body> 
-
-d3n.d3Element.append('span') // inserts span tag
-
-d3n.html() // returns: <html><head></head><body><span></span></body></html>
+ var D3Node = require('d3-node')
+ var d3n = new D3Node()       // initializes D3 on <body>
+ d3n.d3Element.append('span') // inserts span tag
+ d3n.html() // returns: <html><head></head><body><span></span></body></html>
 ```
 
-Setting container & insertion point via selector
+__Setting container & insertion point via selector__
 
 ```javascript
-var options = {selector: '#chart'}
-options.container = '<div id="container"><div id="chart"></div></div>'
-
-var d3n = new D3Node(options) // initializes D3 with container element
-
-d3n.d3Element.append('span') // insert span tag into #chart
-
-d3n.html() // returns: <html><head></head><body><div id="container"><div id="chart"><span></span></div></div></body></html>
-
+ var options = {selector: '#chart'}, container: '<div id="container"><div id="chart"></div></div>'}
+ var d3n = new D3Node(options) // initializes D3 with container element
+ d3n.d3Element.append('span')  // insert span tag into #chart
+ d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>               
 ```
 
-SVG creation
+__SVG creation__
 
 ```javascript
-var d3n = new D3Node() // initializes D3 with container element
+ var d3n = new D3Node()      // initializes D3 with container element
+ d3n.createSVG().append('g') // create SVG w/ 'g' tag
+ d3n.svgString() // output: <svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+```
 
-d3n.createSVG().append('g')  // create SVG w/ 'g' tag
+__Inline SVG styles__
 
-d3n.svgString() // returns: <svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+```javascript
+ var d3n = new D3Node({styles:'.test {fill:#000;}'})
+ d3n.createSVG().append('g')
+ d3n.svgString() 
+```
 
-d3n.html() // returns: <html><head></head><body><svg xmlns="http://www.w3.org/2000/svg"><g></g></svg></body></html>
+> Output
+```html
+<svg xmlns="http://www.w3.org/2000/svg">
+   <defs>
+     <style type="text/css"><![CDATA[ .test{fill:#000;} ]]></style>
+   </defs>
+   <g></g>
+<svg>
 ```
 
 ### [See examples for more...](examples)
@@ -56,7 +63,6 @@ d3n.html() // returns: <html><head></head><body><svg xmlns="http://www.w3.org/20
 ```
 $ npm test
 ```
-
 
 ### TODOs:
 
