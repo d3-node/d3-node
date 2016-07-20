@@ -4,7 +4,7 @@
   "description": "Server-side D3 with ease",
   "main": "index.js",
   "scripts": {
-    "test": "standard & mocha test"
+    "test": "standard && mocha test"
   },
   "repository": {
     "type": "git",
