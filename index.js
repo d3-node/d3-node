@@ -4,6 +4,8 @@ const jsDom = require('jsdom')
 
 module.exports = D3Node
 
+module.exports.d3 = d3
+
 const defaults = {
   selector: '',  // selects base D3 Element
   container: '', // markup inserted in body
@@ -31,7 +33,7 @@ function D3Node (opts) {
 
   this.options = options
   this.document = document
-  this.d3Version = d3.version
+  this.window = document.parentWindow
   this.d3Element = d3Element
 }
 

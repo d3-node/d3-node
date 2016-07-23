@@ -12,22 +12,14 @@ Server-side D3 with ease
 - Static rendering of [Data-Driven Documents](https://d3js.org/)
 - [Embedded SVG stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
 
-### Usage:
+### Basic usage:
 
 ```javascript
  var D3Node = require('d3-node')
- var d3n = new D3Node()       // initializes D3 on <body>
- d3n.d3Element.append('span') // inserts span tag
+ var d3 = D3Node.d3
+ var d3n = new D3Node()    // create instance
+ d3.select(d3n.document.body).append('span') // select <body> & insert span
  d3n.html() // returns: <html><head></head><body><span></span></body></html>
-```
-
-__Setting container & insertion point via selector__
-
-```javascript
- var options = {selector: '#chart'}, container: '<div id="container"><div id="chart"></div></div>'}
- var d3n = new D3Node(options) // initializes D3 with container element
- d3n.d3Element.append('span')  // insert span tag into #chart
- d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>               
 ```
 
 __SVG creation__
@@ -36,6 +28,17 @@ __SVG creation__
  var d3n = new D3Node()      // initializes D3 with container element
  d3n.createSVG().append('g') // create SVG w/ 'g' tag
  d3n.svgString() // output: <svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+```
+
+### Advanced usage
+
+__Setting container & insertion point via selector__
+
+```javascript
+ var options = {selector: '#chart'}, container: '<div id="container"><div id="chart"></div></div>'}
+ var d3n = new D3Node(options) // initializes D3 with container element
+ d3.select(d3n.document.querySelector('#chart')).append('span') // insert span tag into #chart
+ d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>               
 ```
 
 __Inline SVG styles__

@@ -1,10 +1,10 @@
 const fs = require('fs');
-const d3 = require('d3');
 const topojson = require('topojson');
 const france = require('./data/france.json');
 const csvString = fs.readFileSync('examples/data/fr-population.csv').toString();
 const population = d3.csv.parse(csvString);
 const D3Node = require('./../index');
+const d3 = D3Node.d3;
 
 // adapted from: https://bl.ocks.org/bricedev/97c53d6ed168902239f7
 var options = {svgStyles:'svg{font: 10px sans-serif;}.border{stroke-width:.3px;fill:none;stroke:#333;}.caption{font-weight: bold;}.key path {display: none;}.key line{stroke:#000;shape-rendering:crispEdges;}'};

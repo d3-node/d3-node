@@ -1,7 +1,7 @@
 const fs = require('fs');
-const d3 = require('d3');
 const tsvString = fs.readFileSync('examples/data/barchart.tsv').toString();
 const D3Node = require('./../index');
+const d3 = D3Node.d3;
 
 const styles = '.bar{fill: steelblue;} .bar:hover{fill: brown;} .axis{font: 10px sans-serif;} .axis path,.axis line{fill: none;stroke: #000;shape-rendering: crispEdges;} .x.axis path{display: none;}';
 const markup = '<div id="container"><h2>Bar Chart</h2><div id="chart"></div></div>';

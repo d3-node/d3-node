@@ -1,12 +1,14 @@
 // mocha test -R List
 /* global describe, it */
 
-var assert = require('assert')
-var D3Node = require('./../index')
+const assert = require('assert')
+const D3Node = require('./../index')
+const d3 = D3Node.d3
 
 describe('Append span (defaults)', function () {
   var d3n = new D3Node()
-  d3n.d3Element.append('span')
+  var document = d3n.document
+  d3.select(document.body).append('span')
 
   it('should have span tag', function () {
     var expected = '<html><head></head><body><span></span></body></html>'
@@ -23,7 +25,7 @@ describe('Append span (defaults)', function () {
 describe('Append span (w/ container)', function () {
   var options = {selector: '#chart', container: '<div id="container"><div id="chart"></div></div>'}
   var d3n = new D3Node(options)
-  d3n.d3Element.append('span')
+  d3.select(d3n.document.querySelector('#chart')).append('span') // or d3n.d3Element.append('span')
 
   it('should have span tag', function () {
     var expected = '<html><head></head><body><div id="container"><div id="chart"><span></span></div></div></body></html>'
@@ -110,12 +112,5 @@ describe('svg method via auto-init', function () {
 
   it('should return svg element', function () {
     assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>')
-  })
-})
-
-describe('d3Version', function () {
-  var d3n = D3Node()
-  it('should be 3.x', function () {
-    assert.equal(d3n.d3Version.split('.')[0], '3')
   })
 })
