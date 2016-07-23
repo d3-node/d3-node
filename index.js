@@ -33,7 +33,7 @@ function D3Node (opts) {
 
   this.options = options
   this.document = document
-  this.window = document.parentWindow
+  this.window = document.defaultView
   this.d3Element = d3Element
 }
 
