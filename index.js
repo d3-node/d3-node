@@ -6,6 +6,8 @@ module.exports = D3Node
 
 module.exports.d3 = d3
 
+module.exports.jsDom = jsDom
+
 const defaults = {
   selector: '',  // selects base D3 Element
   container: '', // markup inserted in body
@@ -58,6 +60,6 @@ D3Node.prototype.svgString = function () {
 }
 
 D3Node.prototype.html = function () {
-  return d3.select(this.document.documentElement).node().outerHTML
+  return jsDom.serializeDocument(this.document)
 }
 
