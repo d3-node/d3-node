@@ -17,6 +17,7 @@ const defaults = {
 function D3Node (opts) {
   const options = Object.assign({}, defaults, opts)
 
+  // auto-new instance, so we always have 'this'
   if (!(this instanceof D3Node)) {
     return new D3Node(options)
   }
@@ -40,7 +41,7 @@ function D3Node (opts) {
 }
 
 D3Node.prototype.createSVG = function () {
-  var svg = this.d3Element.append('svg')
+  const svg = this.d3Element.append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
 
   if (this.options.svgStyles) {
