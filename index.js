@@ -1,6 +1,6 @@
 'use strict'
 const d3 = require('d3')
-const jsDom = require('jsdom')
+const jsDom = require('jsdom');
 
 module.exports = D3Node
 
