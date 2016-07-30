@@ -1,9 +1,13 @@
 # D3-Node
 Server-side D3 with ease
 
-[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/bradoyler/d3-node)
+<img height="250px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
+<img height="250px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
 
-[![NPM](https://nodei.co/npm/d3-node.png?downloads=true&downloadRank=true)](https://nodei.co/npm/d3-node/) [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[see examples >](examples)
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/bradoyler/d3-node)
 
 ### Why?
 
@@ -13,6 +17,8 @@ Server-side D3 with ease
 - [Embedded SVG stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
 
 ### Basic usage:
+
+[![NPM](https://nodei.co/npm/d3-node.png?downloads=true&downloadRank=true)](https://nodei.co/npm/d3-node/)
 
 ```javascript
  var D3Node = require('d3-node')
