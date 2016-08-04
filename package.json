@@ -26,7 +26,9 @@
     "mocha": "2.5.3",
     "topojson": "1.6.26",
     "svg2png": "3.0.0",
-    "standard": "7.1.2"
+    "standard": "7.1.2",
+    "istanbul": ">0.3.2",
+    "codecov": ">1.0.0"
   },
   "standard": {
     "ignore": [
