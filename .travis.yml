@@ -3,7 +3,5 @@ sudo: false
 node_js:
   - "5"
   - "4"
-install:
-  - npm install --dev
 script:
   - npm test
