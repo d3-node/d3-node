@@ -1,7 +1,7 @@
 const topojson = require('topojson');
 const us = require('./data/us.json');
 const D3Node = require('./../index');
-const d3 = D3Node.d3;
+const d3 = require('d3');
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
 var options = {svgStyles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}'};

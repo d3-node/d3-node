@@ -79,3 +79,19 @@ $ node examples/pie-chart
 #### Output
 
 ![piechart](https://cloud.githubusercontent.com/assets/425966/16859544/b840a4a6-49fd-11e6-8ca1-fbe03bb76400.png)
+
+----
+
+### v4 Line Chart
+
+([javascript](v4.line-chart.js)
+
+#### Run it
+
+```
+$ node examples/v4.line-chart
+```
+
+#### Output
+
+![v4.line-chart](https://cloud.githubusercontent.com/assets/425966/17641565/804534b0-60f3-11e6-8b5a-963e59805d87.png)

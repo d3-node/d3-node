@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString();
 const D3Node = require('./../index');
-const d3 = D3Node.d3;
+const d3 = require('d3');
 
 const markup = '<div id="container"><h2>Pie Chart</h2><div id="chart"></div></div>';
 const styles = '.arc text {font: 10px sans-serif;text-anchor: middle;} .arc path {stroke: #fff;}';

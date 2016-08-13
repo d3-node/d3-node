@@ -1,14 +1,12 @@
 'use strict'
-const d3 = require('d3')
 const jsDom = require('jsdom')
 
 module.exports = D3Node
 
-module.exports.d3 = d3
-
 module.exports.jsDom = jsDom
 
 const defaults = {
+  d3Module: require('d3'), // to allow use of d3.v4
   selector: '',  // selects base D3 Element
   container: '', // markup inserted in body
   svgStyles: ''  // embedded svg stylesheets
@@ -29,7 +27,7 @@ function D3Node (opts) {
   }
 
   // setup d3 selection
-  let d3Element = d3.select(document.body)
+  let d3Element = options.d3Module.select(document.body)
   if (options.selector) {
     d3Element = d3Element.select(options.selector)
   }
@@ -38,6 +36,7 @@ function D3Node (opts) {
   this.document = document
   this.window = document.defaultView
   this.d3Element = d3Element
+  this.d3 = options.d3Module
 }
 
 D3Node.prototype.createSVG = function () {
@@ -63,4 +62,3 @@ D3Node.prototype.svgString = function () {
 D3Node.prototype.html = function () {
   return jsDom.serializeDocument(this.document)
 }
-
