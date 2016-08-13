@@ -52,6 +52,18 @@ D3Node.prototype.createSVG = function () {
   return svg
 }
 
+D3Node.prototype.createCanvas = function () {
+  if (!this.document.createElement('canvas').getContext('2d')) {
+    throw new Error('Install node-canvas for HTMLCanvasElement support.')
+  }
+
+  if (!this.document.querySelector('canvas')) {
+    return this.document.createElement('canvas')
+  } else {
+    return this.document.querySelector('canvas')
+  }
+}
+
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
     return this.d3Element.select('svg').node().outerHTML

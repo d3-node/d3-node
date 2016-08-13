@@ -20,10 +20,10 @@
   "license": "MIT",
   "dependencies": {
     "d3": "v3.5.17",
-    "d3-v4": "git://github.com/bradoyler/d3.git",
     "jsdom": "9.4.1"
   },
   "devDependencies": {
+    "d3-v4": "git://github.com/bradoyler/d3.git",
     "mocha": "2.5.3",
     "topojson": "1.6.26",
     "svg2png": "3.0.0",
