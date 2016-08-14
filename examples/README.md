@@ -82,7 +82,7 @@ $ node examples/pie-chart
 
 ----
 
-### v4 Line Chart
+### Line Chart (v4)
 
 ([javascript](v4.line-chart.js))
 
@@ -95,3 +95,19 @@ $ node examples/v4.line-chart
 #### Output
 
 ![v4.line-chart](https://cloud.githubusercontent.com/assets/425966/17641565/804534b0-60f3-11e6-8b5a-963e59805d87.png)
+
+----
+
+### Voronoi Diagram (v4)
+
+([javascript](v4.voronoi.js))
+
+#### Run it
+
+```
+$ node examples/v4.voronoi
+```
+
+#### Output
+
+![v4.voronoi](https://cloud.githubusercontent.com/assets/425966/17651715/e9a4e2fa-623a-11e6-8cf9-ea4275e16c94.png)
