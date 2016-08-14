@@ -52,6 +52,7 @@ D3Node.prototype.createSVG = function () {
   return svg
 }
 
+// experimental method for creating 2d canvas
 D3Node.prototype.createCanvas = function () {
   if (!this.document.createElement('canvas').getContext('2d')) {
     throw new Error('Install node-canvas for HTMLCanvasElement support.')

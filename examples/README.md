@@ -52,7 +52,7 @@ $ node examples/map-us
 
 ### Choropleth Map (French Population)
 
-([javascript](map-choropleth.js) / [map data](data/france.json) / [population data](data/))
+([javascript](map-choropleth.js) / [map data](data/france.json) / [population data](data/fr-population.csv))
 
 #### Run it
 
@@ -84,7 +84,7 @@ $ node examples/pie-chart
 
 ### v4 Line Chart
 
-([javascript](v4.line-chart.js)
+([javascript](v4.line-chart.js))
 
 #### Run it
 
