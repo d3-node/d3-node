@@ -1,8 +1,8 @@
 # D3-Node
 Server-side D3 with ease
 
-<img height="250px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
-<img height="250px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
+<img height="220px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
+<img height="220px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
 
 [see examples >](examples)
 
@@ -12,9 +12,10 @@ Server-side D3 with ease
 ### Why?
 
 - Performance: pre-rendering allows offloading data processing, and network overhead
-- Node.js + npm: take advantage of the entire ecosystem
-- Static rendering of [Data-Driven Documents](https://d3js.org/)
-- [Embedded SVG stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
+- Take advantage of the entire ecosystem: [npmjs.com](https://www.npmjs.com/)
+- Static rendering of [Data-Driven Documents (D3.js)](https://d3js.org/)
+- Portable SVG with [embedded stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
+- Easily adapt examples from [bl.ocks.org](http://bl.ocks.org/)
 
 ### Basic usage:
 
@@ -78,3 +79,4 @@ $ npm test
 - Add more examples: (remote data, world map)
 - Create Gulp task
 - Add option to inject css/js into html output
+- Canvas support

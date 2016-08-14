@@ -3,7 +3,7 @@
 
 const assert = require('assert')
 const D3Node = require('./../index')
-const d3 = D3Node.d3
+const d3 = require('d3')
 
 describe('Append span (defaults)', function () {
   var d3n = new D3Node()
