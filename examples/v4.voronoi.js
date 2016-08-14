@@ -31,5 +31,15 @@ svg.append('g')
   .attr('d', function(d) { return d ? 'M' + d.join('L') + 'Z' : null; })
   .style('fill', function(d,i){return colorScheme(i);});
 
+// draw site point
+svg.append('g')
+  .selectAll('circle')
+  .data(sites)
+  .enter().append('circle')
+  .attr('r', 2.5)
+  .attr('cx', function(d) { return d[0]; })
+  .attr('cy', function(d) { return d[1]; });
+
+
 // create output files
 require('./lib/output')('v4.voronoi', d3n);
