@@ -4,7 +4,7 @@
   "description": "Server-side D3 with ease",
   "main": "index.js",
   "scripts": {
-    "test": "standard && mocha test"
+    "test": "standard && mocha test && istanbul cover node_modules/mocha/bin/_mocha && codecov"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
     "mocha": "2.5.3",
     "topojson": "1.6.26",
     "svg2png": "3.0.0",
-    "standard": "7.1.2"
+    "standard": "7.1.2",
+    "istanbul": ">0.3.2",
+    "codecov": ">1.0.0"
   },
   "standard": {
     "ignore": [
