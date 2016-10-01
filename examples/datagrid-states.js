@@ -64,7 +64,7 @@ var svg = d3n.createSVG()
 var gridWidth = d3.max(gridCells, function (d) { return d.x; }) + 1;
 var gridHeight = d3.max(gridCells, function (d) { return d.y; }) + 1;
 
-var state = svg.append('g')
+var gridCell = svg.append('g')
   .attr('transform', 'translate(' + width / 2.7 + ',' + height / 2 + ')')
   .selectAll('.grid-cell')
   .data(gridCells)
@@ -80,13 +80,13 @@ var state = svg.append('g')
     return 'translate(' + (d.x - gridWidth / 2.9) * cellSize + ',' + (d.y - gridHeight / 2) * cellSize + ')';
   });
 
-state.append('rect')
+gridCell.append('rect')
   .attr('x', -cellSize / 2)
   .attr('y', -cellSize / 2)
   .attr('width', cellSize - 1)
   .attr('height', cellSize - 1);
 
-state.append('text').attr('dy', '.35em')
+gridCell.append('text').attr('dy', '.35em')
   .text(function (d) {
     return d.name;
   });
