@@ -3,7 +3,7 @@ const topojson = require('topojson');
 const france = require('./data/france.json');
 const csvString = fs.readFileSync('examples/data/fr-population.csv').toString();
 const D3Node = require('./../index');
-const d3 = require('d3');
+const d3 = require('d3-legacy');
 const population = d3.csv.parse(csvString);
 
 // adapted from: https://bl.ocks.org/bricedev/97c53d6ed168902239f7

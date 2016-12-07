@@ -1,27 +1,29 @@
 const topojson = require('topojson');
-const us = require('./data/us-states.json'); // source: https://github.com/bradoyler/atlas-make/tree/master/us-states
+const us = require('./data/us.json');
 const D3Node = require('./../index');
 const d3 = require('d3');
 
-// adapted from: http://bl.ocks.org/bradoyler/bae6adf4e1e74c925ea20bf6026614b3
-
-var options = {svgStyles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}'};
+// adapted from: https://bl.ocks.org/mbostock/6406992
+var options = {
+  svgStyles:'.mesh{fill: none;stroke: #333;stroke-width: .5px;stroke-linejoin: round;}',
+  d3Module: d3
+};
 
 var d3n = new D3Node(options);
 
 var width = 960,
   height = 500;
-var projection = d3.geo.albersUsa();
-var path = d3.geo.path()
-  .projection(projection);
+
+var path = d3.geoPath()
+  .projection(null);
 
 var svg = d3n.createSVG()
-  .attr("width", width)
-  .attr("height", height)
-  .append("path")
+  .attr('width', width)
+  .attr('height', height)
+  .append('path')
   .datum(topojson.mesh(us))
-  .attr("class", "mesh")
-  .attr("d", path);
+  .attr('class', 'mesh')
+  .attr('d', path);
 
 // create output files
 require('./lib/output')('map-us', d3n);

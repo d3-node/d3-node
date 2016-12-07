@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString();
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 const markup = '<canvas width="960" height="500"></canvas>';
 var options = {selector:'canvas', container:markup, d3Module:d3};
@@ -64,4 +64,4 @@ arcs.forEach(function(d) {
 /// -- end D3 code
 
 // create output files
-require('./lib/output')('v4.pie-canvas', d3n);
+require('./lib/output')('pie-canvas', d3n);

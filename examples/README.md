@@ -2,6 +2,8 @@
 
 Most examples derive from examples @ [bl.ocks.org](https://bl.ocks.org/)
 
+note: some examples use d3 v3.5, which is used via `require('d3-legacy')`
+
 ### Bar Chart
 
 ([javascript](bar-chart.js) / [data](data/barchart.tsv))
@@ -84,12 +86,12 @@ $ node examples/pie-chart
 
 ### Line Chart (v4)
 
-([javascript](v4.line-chart.js))
+([javascript](line-chart.js))
 
 #### Run it
 
 ```
-$ node examples/v4.line-chart
+$ node examples/line-chart
 ```
 
 #### Output
@@ -100,14 +102,14 @@ $ node examples/v4.line-chart
 
 ### Voronoi Diagram (v4)
 
-([javascript](v4.voronoi.js))
+([javascript](voronoi.js))
 
 #### Run it
 
 ```
-$ node examples/v4.voronoi
+$ node examples/voronoi
 ```
 
 #### Output
 
-![v4.voronoi](https://cloud.githubusercontent.com/assets/425966/17651715/e9a4e2fa-623a-11e6-8cf9-ea4275e16c94.png)
+![voronoi](https://cloud.githubusercontent.com/assets/425966/17651715/e9a4e2fa-623a-11e6-8cf9-ea4275e16c94.png)

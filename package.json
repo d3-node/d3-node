@@ -19,11 +19,11 @@
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
   "license": "MIT",
   "dependencies": {
-    "d3": "v3.5.17",
+    "d3": "4.4.0",
     "jsdom": "9.4.1"
   },
   "devDependencies": {
-    "d3-v4": "git://github.com/bradoyler/d3.git",
+    "d3-legacy": "git://github.com/bradoyler/d3.git#v3.5.17-pre",
     "mocha": "2.5.3",
     "topojson": "1.6.26",
     "svg2png": "3.0.0",

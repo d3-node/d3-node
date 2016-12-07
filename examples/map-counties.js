@@ -1,7 +1,7 @@
 const topojson = require('topojson');
 const topo = require('./data/va-counties.json');
 const D3Node = require('./../index');
-const d3 = require('d3');
+const d3 = require('d3-legacy');
 
 // adapted from: http://bl.ocks.org/mbostock/7061976
 
