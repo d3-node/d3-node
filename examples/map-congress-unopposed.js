@@ -76,7 +76,7 @@ svg.append('g')
       } else if (race && race.party === 'Democratic') {
         return 'blue';
       }
-      return '#eee';
+      return '#ccc';
     })
     .append('title')
     .text(function(d) { return d.id; });
