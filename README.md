@@ -42,8 +42,9 @@ __SVG creation__
 __Setting container & insertion point via selector__
 
 ```javascript
- var options = {selector: '#chart'}, container: '<div id="container"><div id="chart"></div></div>'}
+ var options = { selector: '#chart', container: '<div id="container"><div id="chart"></div></div>' }
  var d3n = new D3Node(options) // initializes D3 with container element
+ var d3 = d3n.d3
  d3.select(d3n.document.querySelector('#chart')).append('span') // insert span tag into #chart
  d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>               
 ```
