@@ -1,5 +1,5 @@
 const D3Node = require('./../index');
-const d3 = require('d3-v4')
+const d3 = require('d3')
 
 const styles = `
 .bar rect {
@@ -69,4 +69,4 @@ svg.append("g")
   .call(d3.axisBottom(x));
 
 // create output files
-require('./lib/output')('v4.histogram', d3n);
+require('./lib/output')('histogram', d3n);

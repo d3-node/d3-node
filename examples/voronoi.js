@@ -1,5 +1,5 @@
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 // adapted from: http://bl.ocks.org/mbostock/4060366 - Voronoi Tessellation
 var options = {
@@ -42,4 +42,4 @@ svg.append('g')
 
 
 // create output files
-require('./lib/output')('v4.voronoi', d3n);
+require('./lib/output')('voronoi', d3n);

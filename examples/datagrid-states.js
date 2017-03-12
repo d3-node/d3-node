@@ -1,5 +1,5 @@
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 const markup = '<div id="container"><h3>U.S. States</h3><div id="statesgrid"></div></div>';
 

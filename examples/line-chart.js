@@ -1,5 +1,5 @@
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 const styles = '.axis path,.axis line {fill: none;stroke: #000;shape-rendering: crispEdges;}.area {fill: lightsteelblue;}.line {fill: none;stroke: steelblue;stroke-width: 1.5px;} .dot {fill: white;stroke: steelblue;stroke-width: 1.5px;}';
 const markup = '<div id="container"><h2>Line Chart (missing data)</h2><div id="chart"></div></div>';
@@ -59,4 +59,4 @@ svg.selectAll(".dot")
 /// -- end D3 code
 
 // create output files
-require('./lib/output')('v4.line-chart', d3n);
+require('./lib/output')('line-chart', d3n);

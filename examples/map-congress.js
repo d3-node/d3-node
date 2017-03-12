@@ -1,7 +1,7 @@
 const topojson = require('topojson');
 const topo = require('./data/congress.json'); // source: https://github.com/bradoyler/atlas-make/tree/master/us-states
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 // adapted from: http://bl.ocks.org/bradoyler/e9d70c6b1ce76e1ba8b83d94cfd4296c
 

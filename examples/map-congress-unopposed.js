@@ -3,7 +3,7 @@ const topo = require('./data/congress-115-states.json'); // source: https://gith
 const fs = require('fs');
 const csvString = fs.readFileSync('examples/data/unopposed-house-2016.csv', 'UTF-8').toString();
 const D3Node = require('./../index');
-const d3 = require('d3-v4');
+const d3 = require('d3');
 
 // derived from http://bl.ocks.org/mbostock/4657115
 const css = `
