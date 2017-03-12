@@ -6,17 +6,7 @@ note: some examples use d3 v3.5, which is used via `require('d3-legacy')`
 
 ### Bar Chart
 
-([javascript](bar-chart.js) / [data](data/barchart.tsv))
-
-#### Run it
-
-```
-$ node examples/bar-chart
-```
-
-#### Output
-
-![barchart](https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png)
+source: https://github.com/d3-node/d3node-barchart
 
 ----
 
@@ -54,33 +44,19 @@ $ node examples/map-us
 
 ### Choropleth Map (French Population)
 
-([javascript](map-choropleth.js) / [map data](data/france.json) / [population data](data/fr-population.csv))
+source: https://github.com/d3-node/d3node-map-choropleth
 
-#### Run it
+----
 
-```
-$ node examples/map-choropleth
-```
+### US Congressional District Map
 
-#### Output
-
-![fr-map](https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png)
+source: https://github.com/d3-node/d3node-congress-map
 
 ----
 
 ### Pie Chart
 
-([javascript](pie-chart.js) / [data](data/piechart.csv))
-
-#### Run it
-
-```
-$ node examples/pie-chart
-```
-
-#### Output
-
-![piechart](https://cloud.githubusercontent.com/assets/425966/16859544/b840a4a6-49fd-11e6-8ca1-fbe03bb76400.png)
+source: https://github.com/d3-node/d3node-piechart
 
 ----
 
@@ -102,14 +78,4 @@ $ node examples/line-chart
 
 ### Voronoi Diagram (v4)
 
-([javascript](voronoi.js))
-
-#### Run it
-
-```
-$ node examples/voronoi
-```
-
-#### Output
-
-![voronoi](https://cloud.githubusercontent.com/assets/425966/17651715/e9a4e2fa-623a-11e6-8cf9-ea4275e16c94.png)
+source: https://github.com/d3-node/d3node-voronoi

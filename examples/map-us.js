@@ -1,5 +1,5 @@
 const topojson = require('topojson');
-const us = require('./data/us.json');
+const us = require('./data/us-states.json');
 const D3Node = require('./../index');
 const d3 = require('d3');
 
