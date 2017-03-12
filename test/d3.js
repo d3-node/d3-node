@@ -30,7 +30,7 @@ describe('d3.version', function () {
   })
 })
 
-describe('d3.version', function () {
+describe('d3.version (legacy)', function () {
   it('should be 3.x', function () {
     var d3n = new D3Node({d3Module: d3Legacy})
     assert.equal(d3n.d3.version.split('.')[0], '3')
