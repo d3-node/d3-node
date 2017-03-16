@@ -32,6 +32,10 @@ describe('Append span (w/ container)', function () {
     var actual = d3n.html()
     assert.equal(actual, expected)
   })
+
+  it('should return chart html by selector', function () {
+    assert.equal(d3n.chartHTML(), '<div id="chart"><span></span></div>')
+  })
 })
 
 describe('Set D3 styles (2 instances)', function () {
