@@ -75,3 +75,7 @@ D3Node.prototype.svgString = function () {
 D3Node.prototype.html = function () {
   return jsDom.serializeDocument(this.document)
 }
+
+D3Node.prototype.chartHTML = function () {
+  return this.document.querySelector(this.options.selector).outerHTML
+}

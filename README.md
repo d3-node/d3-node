@@ -46,7 +46,8 @@ __Setting container & insertion point via selector__
  var d3n = new D3Node(options) // initializes D3 with container element
  var d3 = d3n.d3
  d3.select(d3n.document.querySelector('#chart')).append('span') // insert span tag into #chart
- d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>               
+ d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>
+ d3n.chartHTML()   // output: <div id="chart"><span></span></div>
 ```
 
 __Inline SVG styles__
@@ -54,7 +55,7 @@ __Inline SVG styles__
 ```javascript
  var d3n = new D3Node({styles:'.test {fill:#000;}'})
  d3n.createSVG().append('g')
- d3n.svgString() 
+ d3n.svgString()
 ```
 
 > Output
