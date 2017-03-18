@@ -60,19 +60,9 @@ source: https://github.com/d3-node/d3node-piechart
 
 ----
 
-### Line Chart (v4)
+### Line Chart
 
-([javascript](line-chart.js))
-
-#### Run it
-
-```
-$ node examples/line-chart
-```
-
-#### Output
-
-![v4.line-chart](https://cloud.githubusercontent.com/assets/425966/17641565/804534b0-60f3-11e6-8b5a-963e59805d87.png)
+source: https://github.com/d3-node/d3node-linechart
 
 ----
 
