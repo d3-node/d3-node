@@ -1,5 +1,6 @@
 'use strict'
 const jsDom = require('jsdom')
+const xml = require('xmlserializer')
 
 module.exports = D3Node
 
@@ -67,7 +68,10 @@ D3Node.prototype.createCanvas = function () {
 
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
-    return this.d3Element.select('svg').node().outerHTML
+    const svgNode = this.d3Element.select('svg').node()
+    return xml.serializeToString(svgNode)
+      .replace('&lt;![CDATA', '<![CDATA')
+      .replace('&gt;</style>', '></style>') // hack to retain embedded styles
   }
   return ''
 }
