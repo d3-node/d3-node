@@ -94,12 +94,18 @@ describe('createSVG (w/ svgStyles) 2', function () {
   })
 })
 
-describe('svg method (defaults)', function () {
+describe('svgString() should retain camel-casing', function () {
   var d3n = new D3Node()
-  d3n.createSVG().append('g')
+  d3n.createSVG()
+  .attr('preserveAspectRatio', 'true')
+  .append('radialGradient').attr('offset', '0%')
 
   it('should return svg', function () {
-    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g></g></svg>')
+    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
+  })
+
+  it('should return html (w/o casing)', function () {
+    assert.equal(d3n.html(), '<html><head></head><body><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialgradient offset="0%"></radialgradient></svg></body></html>')
   })
 })
 
