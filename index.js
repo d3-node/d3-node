@@ -5,7 +5,7 @@ module.exports = D3Node
 
 module.exports.jsDom = jsDom
 
-function fixSVGCase (text) {
+function fixXmlCase (text) {
   // Fix a jsdom issue where all SVG tagNames are lowercased:
   // https://github.com/tmpvar/jsdom/issues/620
   var tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
@@ -83,7 +83,7 @@ D3Node.prototype.createCanvas = function () {
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
     // temp until: https://github.com/tmpvar/jsdom/issues/1368
-    return fixSVGCase(this.d3Element.select('svg').node().outerHTML)
+    return fixXmlCase(this.d3Element.select('svg').node().outerHTML)
   }
   return ''
 }
