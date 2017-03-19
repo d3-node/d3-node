@@ -21,8 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "d3": "4.4.0",
-    "jsdom": "9.4.1",
-    "xmlserializer": "0.6.0"
+    "jsdom": "9.4.1"
   },
   "devDependencies": {
     "d3-legacy": "git://github.com/bradoyler/d3.git#v3.5.17-pre",

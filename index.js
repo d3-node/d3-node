@@ -1,10 +1,24 @@
 'use strict'
 const jsDom = require('jsdom')
-const xml = require('xmlserializer')
 
 module.exports = D3Node
 
 module.exports.jsDom = jsDom
+
+function fixSVGCase (text) {
+  // Fix a jsdom issue where all SVG tagNames are lowercased:
+  // https://github.com/tmpvar/jsdom/issues/620
+  var tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
+  for (var i = 0, l = tagNames.length; i < l; i++) {
+    var tagName = tagNames[i]
+    text = text.replace(
+            new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
+            function (all, start) {
+              return start + tagName
+            })
+  }
+  return text
+}
 
 const defaults = {
   d3Module: require('d3'), // to allow use of d3.v4
@@ -68,10 +82,8 @@ D3Node.prototype.createCanvas = function () {
 
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
-    const svgNode = this.d3Element.select('svg').node()
-    return xml.serializeToString(svgNode)
-      .replace('&lt;![CDATA', '<![CDATA')
-      .replace('&gt;</style>', '></style>') // hack to retain embedded styles
+    // temp until: https://github.com/tmpvar/jsdom/issues/1368
+    return fixSVGCase(this.d3Element.select('svg').node().outerHTML)
   }
   return ''
 }

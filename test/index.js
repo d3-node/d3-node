@@ -70,7 +70,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
 
     d3n.createSVG().append('g')
 
-    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g/></svg>'
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
     assert.equal(actual, expected)
   })
@@ -88,7 +88,7 @@ describe('createSVG (w/ svgStyles) 2', function () {
 
     d3n.createSVG().append('g')
 
-    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g/></svg>'
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
     assert.equal(actual, expected)
   })
@@ -101,7 +101,7 @@ describe('svgString() should retain camel-casing', function () {
   .append('radialGradient').attr('offset', '0%')
 
   it('should return svg', function () {
-    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"/></svg>')
+    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
   })
 
   it('should return html (w/o casing)', function () {
