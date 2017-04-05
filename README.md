@@ -1,13 +1,13 @@
 # D3-Node
 Server-side D3 with ease
 
-<img height="220px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
-<img height="220px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
+<img height="200px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
+<img height="200px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
 
 [see examples >](examples)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/bradoyler/d3-node)
+[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
 
 ### Why?
 
