@@ -1,7 +1,7 @@
 # D3-Node
 Server-side D3 with ease
 
-<img height="200px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
+<img style="float:left" height="200px" src="https://cloud.githubusercontent.com/assets/425966/16896763/33e19052-4b6b-11e6-9f99-3b6ae66d6328.png"/>
 <img height="200px" src="https://cloud.githubusercontent.com/assets/425966/16858768/5af46f86-49f7-11e6-85d0-bcca91045d8f.png"/>
 
 [see examples >](examples)
