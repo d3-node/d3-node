@@ -24,7 +24,7 @@ const defaults = {
   d3Module: require('d3'), // to allow use of d3.v4
   selector: '',  // selects base D3 Element
   container: '', // markup inserted in body
-  svgStyles: ''  // embedded svg stylesheets
+  styles: ''  // embedded svg stylesheets
 }
 
 function D3Node (opts) {
@@ -58,11 +58,11 @@ D3Node.prototype.createSVG = function () {
   const svg = this.d3Element.append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
 
-  if (this.options.svgStyles) {
+  if (this.options.styles) {
     svg.append('defs')
       .append('style')
       .attr('type', 'text/css')
-      .text(`<![CDATA[ ${this.options.svgStyles} ]]>`)
+      .text(`<![CDATA[ ${this.options.styles} ]]>`)
   }
   return svg
 }
