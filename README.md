@@ -22,8 +22,8 @@ Server-side D3 with ease
 
 ```javascript
  var D3Node = require('d3-node')
- var d3 = D3Node.d3
  var d3n = new D3Node()    // create instance
+ var d3 = D3Node.d3
  d3.select(d3n.document.body).append('span') // select <body> & insert span
  d3n.html() // returns: <html><head></head><body><span></span></body></html>
 ```
