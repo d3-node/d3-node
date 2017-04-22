@@ -30,6 +30,12 @@ const defaults = {
 function D3Node (opts) {
   const options = Object.assign({}, defaults, opts)
 
+  // deprecates props
+  if (opts && opts.svgStyles) { // deprecated svgStyles option
+    console.warn('WARNING: svgStyles is deprecated, please use styles instead !!')
+    options.styles = opts.svgStyles
+  }
+
   // auto-new instance, so we always have 'this'
   if (!(this instanceof D3Node)) {
     return new D3Node(options)
