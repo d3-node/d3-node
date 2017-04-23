@@ -63,7 +63,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
     var options = {
       selector: '#chart',
       container: '<div id="container"><div id="chart"></div></div>',
-      styles: '.test1{}'
+      svgStyles: '.test1{}'
     }
 
     var d3n = new D3Node(options)
@@ -76,7 +76,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
   })
 })
 
-describe('createSVG (w/ svgStyles) 2', function () {
+describe('createSVG (w/ styles)', function () {
   it('should return svg', function () {
     var options = {
       selector: '#chart',
