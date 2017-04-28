@@ -23,9 +23,7 @@ var projection = d3.geo.conicConformal()
 var path = d3.geo.path()
   .projection(projection);
 
-var svg = d3n.createSVG()
-  .attr("width", width)
-  .attr("height", height);
+var svg = d3n.createSVG(width, height);
 
 
 var state = topojson.feature(topo, topo.objects.states),

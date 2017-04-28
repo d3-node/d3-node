@@ -15,9 +15,7 @@ var width = 960,
 var projection = d3.geoAlbersUsa();
 var path = d3.geoPath().projection(projection);
 
-var svg = d3n.createSVG()
-  .attr("width", width)
-  .attr("height", height);
+var svg = d3n.createSVG(width, height);
 
 svg.selectAll(".region")
   .data(topojson.feature(topo, topo.objects.congress).features)

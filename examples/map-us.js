@@ -17,9 +17,7 @@ var width = 960,
 var path = d3.geoPath()
   .projection(null);
 
-var svg = d3n.createSVG()
-  .attr('width', width)
-  .attr('height', height)
+var svg = d3n.createSVG(width, height)
   .append('path')
   .datum(topojson.mesh(us))
   .attr('class', 'mesh')

@@ -15,9 +15,7 @@ var projection = d3.geo.albersUsa();
 var path = d3.geo.path()
   .projection(projection);
 
-var svg = d3n.createSVG()
-  .attr("width", width)
-  .attr("height", height)
+var svg = d3n.createSVG(width, height)
   .append("path")
   .datum(topojson.mesh(us))
   .attr("class", "mesh")

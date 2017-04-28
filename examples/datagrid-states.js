@@ -57,9 +57,7 @@ var width = 350;
 var height = 300;
 var cellSize = 30;
 
-var svg = d3n.createSVG()
-  .attr('width', width)
-  .attr('height', height);
+var svg = d3n.createSVG(width, height);
 
 var gridWidth = d3.max(gridCells, function (d) { return d.x; }) + 1;
 var gridHeight = d3.max(gridCells, function (d) { return d.y; }) + 1;

@@ -56,6 +56,7 @@ context.stroke();
 context.textAlign = "center";
 context.textBaseline = "middle";
 context.fillStyle = "#000";
+
 arcs.forEach(function(d) {
   var c = labelArc.centroid(d);
   context.fillText(d.data.age, c[0], c[1]);

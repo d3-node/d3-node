@@ -94,6 +94,18 @@ describe('createSVG (w/ styles)', function () {
   })
 })
 
+describe('createSVG (w/ width & height)', function () {
+  it('should return svg', function () {
+    var d3n = new D3Node()
+
+    d3n.createSVG(100, 100).append('g')
+
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g></g></svg>'
+    var actual = d3n.svgString()
+    assert.equal(actual, expected)
+  })
+})
+
 describe('svgString() should retain camel-casing', function () {
   var d3n = new D3Node()
   d3n.createSVG()

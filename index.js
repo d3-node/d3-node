@@ -60,9 +60,14 @@ function D3Node (opts) {
   this.d3 = options.d3Module
 }
 
-D3Node.prototype.createSVG = function () {
+D3Node.prototype.createSVG = function (width, height) {
   const svg = this.d3Element.append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
+
+  if (width && height) {
+    svg.attr('width', width)
+    .attr('height', height)
+  }
 
   if (this.options.styles) {
     svg.append('defs')

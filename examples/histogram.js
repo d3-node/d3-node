@@ -39,9 +39,10 @@ var y = d3.scaleLinear()
   .domain([0, d3.max(bins, function(d) { return d.length; })])
   .range([height, 0]);
 
-var svg = d3n.createSVG()
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+const svgWidth = width + margin.left + margin.right
+const svgHeight = height + margin.top + margin.bottom
+
+var svg = d3n.createSVG(svgWidth, svgHeight)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
