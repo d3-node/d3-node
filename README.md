@@ -6,7 +6,7 @@ Server-side D3 with ease
 [see examples >](examples)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-[![Build Status](https://travis-ci.org/bradoyler/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
+[![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
 
 ### Why?
 
