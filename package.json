@@ -1,6 +1,6 @@
 {
   "name": "d3-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Server-side D3 with ease",
   "main": "index.js",
   "scripts": {
