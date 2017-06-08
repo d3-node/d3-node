@@ -2,9 +2,9 @@ const fs = require('fs');
 const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString();
 const D3Node = require('./../index');
 const d3 = require('d3');
+const canvasModule = require('canvas');
 
-const markup = '<canvas width="960" height="500"></canvas>';
-var options = {selector:'canvas', container:markup, d3Module:d3};
+var options = { canvasModule };
 
 var d3n = new D3Node(options);
 
@@ -12,7 +12,7 @@ var d3n = new D3Node(options);
 // this example require node-canvas
 ///-- start D3 code
 
-var canvas = d3n.createCanvas();
+var canvas = d3n.createCanvas(960, 500);
 var context = canvas.getContext('2d');
 
 var width = canvas.width,
@@ -37,7 +37,7 @@ var pie = d3.pie()
 
 context.translate(width / 2, height / 2);
 
-var data = d3.csv.parse(csvString);
+var data = d3.csvParse(csvString);
 
 var arcs = pie(data);
 
