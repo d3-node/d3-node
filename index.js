@@ -78,17 +78,16 @@ D3Node.prototype.createSVG = function (width, height) {
   return svg
 }
 
-// experimental method for creating 2d canvas
-D3Node.prototype.createCanvas = function () {
-  if (!this.document.createElement('canvas').getContext('2d')) {
+// experimental method for creating canvas
+D3Node.prototype.createCanvas = function (width, height) {
+  const Canvas = this.options.canvasModule;
+  if (!Canvas || !Canvas.version) {
     throw new Error('Install node-canvas for HTMLCanvasElement support.')
   }
 
-  if (!this.document.querySelector('canvas')) {
-    return this.document.createElement('canvas')
-  } else {
-    return this.document.querySelector('canvas')
-  }
+  const canvas = new Canvas(width, height);
+  this.options.canvas = canvas;
+  return canvas;
 }
 
 D3Node.prototype.svgString = function () {
