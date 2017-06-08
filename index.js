@@ -80,14 +80,14 @@ D3Node.prototype.createSVG = function (width, height) {
 
 // experimental method for creating canvas
 D3Node.prototype.createCanvas = function (width, height) {
-  const Canvas = this.options.canvasModule;
+  const Canvas = this.options.canvasModule
   if (!Canvas || !Canvas.version) {
     throw new Error('Install node-canvas for HTMLCanvasElement support.')
   }
 
-  const canvas = new Canvas(width, height);
-  this.options.canvas = canvas;
-  return canvas;
+  const canvas = new Canvas(width, height)
+  this.options.canvas = canvas
+  return canvas
 }
 
 D3Node.prototype.svgString = function () {
