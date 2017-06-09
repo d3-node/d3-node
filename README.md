@@ -60,6 +60,15 @@ __Inline SVG styles__
 <svg>
 ```
 
+__Create a canvas (for generating a png)__
+```
+ const canvasModule = require('canvas');
+ const d3n = new D3Node({ canvasModule }); // pass it node-canvas
+ const canvas = d3n.createCanvas(960, 500);
+ const context = canvas.getContext('2d');
+ // draw on your canvas and export with d3node-outpu
+```
+
 ### [See examples for more...](examples)
 
 ### Run Tests:
@@ -73,4 +82,3 @@ $ npm test
 - Add more examples: (remote data, world map)
 - Create Gulp task
 - Add option to inject css/js into html output
-- Canvas support
