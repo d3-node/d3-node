@@ -66,7 +66,8 @@ __Create a canvas (for generating a png)__
  const d3n = new D3Node({ canvasModule }); // pass it node-canvas
  const canvas = d3n.createCanvas(960, 500);
  const context = canvas.getContext('2d');
- // draw on your canvas and export with d3node-outpu
+ // draw on your canvas, then output canvas to png
+ canva.pngStream().pipe(fs.createWriteStream('output.png'));
 ```
 
 ### [See examples for more...](examples)
