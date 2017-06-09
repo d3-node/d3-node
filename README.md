@@ -61,7 +61,7 @@ __Inline SVG styles__
 ```
 
 __Create a canvas (for generating a png)__
-```
+```javascript
  const canvasModule = require('canvas');
  const d3n = new D3Node({ canvasModule }); // pass it node-canvas
  const canvas = d3n.createCanvas(960, 500);
