@@ -1,8 +1,10 @@
 'use strict'
 const jsDom = require('jsdom')
+const d3 = require('d3')
 
 module.exports = D3Node
 
+module.exports.d3 = d3
 module.exports.jsDom = jsDom
 
 function fixXmlCase (text) {
@@ -20,44 +22,35 @@ function fixXmlCase (text) {
   return text
 }
 
-const defaults = {
-  d3Module: require('d3'), // to allow use of d3.v4
-  selector: '',  // selects base D3 Element
-  container: '', // markup inserted in body
-  styles: ''  // embedded svg stylesheets
-}
-
-function D3Node (opts) {
-  const options = Object.assign({}, defaults, opts)
-
+function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '' } = {}) {
   // deprecates props
-  if (opts && opts.svgStyles) { // deprecated svgStyles option
+  if (svgStyles && !styles) { // deprecated svgStyles option
     console.warn('WARNING: svgStyles is deprecated, please use styles instead !!')
-    options.styles = opts.svgStyles
+    styles = svgStyles
   }
 
   // auto-new instance, so we always have 'this'
   if (!(this instanceof D3Node)) {
-    return new D3Node(options)
+    return new D3Node({ d3Module, selector, container, styles })
   }
 
   // setup DOM
   let document = jsDom.jsdom()
-  if (options.container) {
-    document = jsDom.jsdom(options.container)
+  if (container) {
+    document = jsDom.jsdom(container)
   }
 
   // setup d3 selection
-  let d3Element = options.d3Module.select(document.body)
-  if (options.selector) {
-    d3Element = d3Element.select(options.selector)
+  let d3Element = d3Module.select(document.body)
+  if (selector) {
+    d3Element = d3Element.select(selector)
   }
 
-  this.options = options
+  this.options = { d3Module, selector, container, styles }
   this.document = document
   this.window = document.defaultView
   this.d3Element = d3Element
-  this.d3 = options.d3Module
+  this.d3 = d3Module
 }
 
 D3Node.prototype.createSVG = function (width, height) {
