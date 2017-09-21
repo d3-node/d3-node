@@ -1,5 +1,11 @@
-# D3-Node
-Server-side D3 with ease
+# D3-Node  
+[![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
+[![npm](https://img.shields.io/npm/dm/d3-node.svg)]()
+[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)]()
+[![npm](https://img.shields.io/npm/l/d3-node.svg)]()
+
+Server-side D3 with ease  
+
 
 > Requires Node 6+
 
@@ -8,7 +14,6 @@ Server-side D3 with ease
 [see examples >](examples)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-[![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
 
 ### Why?
 
