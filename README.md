@@ -1,8 +1,8 @@
 # D3-Node  
 [![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
-[![npm](https://img.shields.io/npm/dm/d3-node.svg)]()
-[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)]()
-[![npm](https://img.shields.io/npm/l/d3-node.svg)]()
+[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.org/d3-node/d3-node)
+[![npm](https://img.shields.io/npm/dm/d3-node.svg)](https://www.npmjs.com/package/d3-node)
+[![npm](https://img.shields.io/npm/l/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 
 Server-side D3 with ease  
 
