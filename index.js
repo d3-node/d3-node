@@ -22,7 +22,7 @@ function fixXmlCase (text) {
   return text
 }
 
-function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '' } = {}) {
+function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '', canvasModule = '' } = {}) {
   // deprecates props
   if (svgStyles && !styles) { // deprecated svgStyles option
     console.warn('WARNING: svgStyles is deprecated, please use styles instead !!')
@@ -46,7 +46,7 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
     d3Element = d3Element.select(selector)
   }
 
-  this.options = { d3Module, selector, container, styles }
+  this.options = { d3Module, selector, container, styles, canvasModule }
   this.document = document
   this.window = document.defaultView
   this.d3Element = d3Element
