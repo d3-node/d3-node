@@ -5,6 +5,15 @@ const assert = require('assert')
 const D3Node = require('./../index')
 const d3 = require('d3')
 
+describe('Append nothing', function () {
+  var d3n = new D3Node()
+  it('should have tags default empty', function () {
+    var expected = '<html><head></head><body></body></html>'
+    var actual = d3n.html()
+    assert.equal(actual, expected)
+  })
+})
+
 describe('Append span (defaults)', function () {
   var d3n = new D3Node()
   var document = d3n.document
@@ -23,7 +32,7 @@ describe('Append span (defaults)', function () {
 })
 
 describe('Append span (w/ container)', function () {
-  var options = {selector: '#chart', container: '<div id="container"><div id="chart"></div></div>'}
+  var options = { selector: '#chart', container: '<div id="container"><div id="chart"></div></div>' }
   var d3n = new D3Node(options)
   d3.select(d3n.document.querySelector('#chart')).append('span') // or d3n.d3Element.append('span')
 
@@ -39,7 +48,7 @@ describe('Append span (w/ container)', function () {
 })
 
 describe('Set D3 styles (2 instances)', function () {
-  var options = {selector: '#chart', container: '<div id="container"><div id="chart"></div></div>'}
+  var options = { selector: '#chart', container: '<div id="container"><div id="chart"></div></div>' }
   var d3a = new D3Node()
   var d3b = new D3Node(options)
   d3b.d3Element.style('color', 'black')
@@ -109,8 +118,8 @@ describe('createSVG (w/ width & height)', function () {
 describe('svgString() should retain camel-casing', function () {
   var d3n = new D3Node()
   d3n.createSVG()
-  .attr('preserveAspectRatio', 'true')
-  .append('radialGradient').attr('offset', '0%')
+    .attr('preserveAspectRatio', 'true')
+    .append('radialGradient').attr('offset', '0%')
 
   it('should return svg', function () {
     assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
