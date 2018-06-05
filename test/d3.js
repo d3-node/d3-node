@@ -24,9 +24,9 @@ describe('Using d3 functions', function () {
 })
 
 describe('d3.version', function () {
-  it('should be 4.x', function () {
+  it('should be 5.x', function () {
     var d3n = new D3Node()
-    assert.equal(d3n.d3.version.split('.')[0], '4')
+    assert.equal(d3n.d3.version.split('.')[0], '5')
   })
 })
 
