@@ -2,7 +2,7 @@
 /* global describe, it */
 
 const assert = require('assert')
-const D3Node = require('./../index')
+const D3Node = require('../src')
 const d3 = D3Node.d3
 const d3Legacy = require('d3-legacy')
 

@@ -1,4 +1,3 @@
-'use strict'
 const jsDom = require('jsdom')
 const d3 = require('d3')
 
@@ -14,10 +13,10 @@ function fixXmlCase (text) {
   for (var i = 0, l = tagNames.length; i < l; i++) {
     var tagName = tagNames[i]
     text = text.replace(
-            new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
-            function (all, start) {
-              return start + tagName
-            })
+      new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
+      function (all, start) {
+        return start + tagName
+      })
   }
   return text
 }
@@ -59,7 +58,7 @@ D3Node.prototype.createSVG = function (width, height) {
 
   if (width && height) {
     svg.attr('width', width)
-    .attr('height', height)
+      .attr('height', height)
   }
 
   if (this.options.styles) {

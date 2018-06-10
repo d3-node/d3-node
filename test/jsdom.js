@@ -2,7 +2,7 @@
 /* global describe, it */
 
 const assert = require('assert')
-const D3Node = require('./../index')
+const D3Node = require('../src')
 
 describe('jsDom features', function () {
   var d3nA = new D3Node({ container: '<!DOCTYPE html>test A' })

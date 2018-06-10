@@ -2,7 +2,7 @@
 /* global describe, it */
 
 const assert = require('assert')
-const D3Node = require('./../index')
+const D3Node = require('../src')
 const d3 = require('d3')
 
 describe('Append nothing', function () {
