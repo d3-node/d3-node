@@ -115,6 +115,18 @@ describe('createSVG (w/ width & height)', function () {
   })
 })
 
+describe('createSVG (w/ width & viewBox)', function () {
+  it('should return svg', function () {
+    var d3n = new D3Node()
+
+    d3n.createSVG(null, null, {width: '100%', viewBox: '0 0 574 308'}).append('g')
+
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 574 308"><g></g></svg>'
+    var actual = d3n.svgString()
+    assert.equal(actual, expected)
+  })
+})
+
 describe('svgString() should retain camel-casing', function () {
   var d3n = new D3Node()
   d3n.createSVG()

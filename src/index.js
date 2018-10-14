@@ -52,13 +52,19 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
   this.d3 = d3Module
 }
 
-D3Node.prototype.createSVG = function (width, height) {
+D3Node.prototype.createSVG = function (width, height, attrs) {
   const svg = this.d3Element.append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
 
   if (width && height) {
     svg.attr('width', width)
       .attr('height', height)
+  }
+
+  if (attrs) {
+    Object.keys(attrs).forEach(function (key) {
+      svg.attr(key, attrs[key])
+    })
   }
 
   if (this.options.styles) {
