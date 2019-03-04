@@ -21,6 +21,7 @@
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
   "license": "MIT",
   "dependencies": {
+    "canvas": "^2.3.1",
     "d3": "5.4.0",
     "jsdom": "^9.12.0"
   },

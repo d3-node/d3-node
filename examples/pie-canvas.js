@@ -1,6 +1,6 @@
 const fs = require('fs');
-const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString();
-const D3Node = require('./../index');
+const csvString = fs.readFileSync('./examples/data/piechart.csv', 'UTF-8').toString();
+const D3Node = require('./../src/index');
 const d3 = require('d3');
 const canvasModule = require('canvas');
 
