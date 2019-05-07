@@ -1,6 +1,6 @@
 const topojson = require('topojson');
 const us = require('./data/us-states.json');
-const D3Node = require('./../index');
+const D3Node = require('./../src');
 const d3 = require('d3');
 
 // adapted from: https://bl.ocks.org/mbostock/6406992
