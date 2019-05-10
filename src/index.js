@@ -83,7 +83,11 @@ D3Node.prototype.createCanvas = function (width, height) {
     throw new Error('Install node-canvas for HTMLCanvasElement support.')
   }
 
-  const canvas = new Canvas(width, height)
+  if (parseInt(Canvas.version) >= 2)
+    const canvas = new Canvas.Canvas(width, height)
+  else
+    const canvas = new Canvas(width, height)
+    
   this.options.canvas = canvas
   return canvas
 }
