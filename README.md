@@ -1,4 +1,3 @@
-(Fork with fixed canvas!)
 # D3-Node  
 [![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
 [![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.org/d3-node/d3-node)
