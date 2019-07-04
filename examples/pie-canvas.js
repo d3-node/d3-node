@@ -2,7 +2,7 @@ const fs = require('fs')
 const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString()
 const D3Node = require('./../src')
 const d3 = require('d3')
-const canvasModule = require('canvas') // must install node-canvas 1.x
+const canvasModule = require('canvas') // must npm install node-canvas
 
 var options = { canvasModule }
 
