@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "d3-legacy": "git://github.com/bradoyler/d3.git#v3.5.17-pre",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-node": "^7.0.1",
+    "eslint": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
     "mocha": "5.2.0",
     "svg2png": "4.1.1",
     "topojson": "^1.6.27"
