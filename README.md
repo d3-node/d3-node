@@ -7,7 +7,7 @@
 Server-side D3 with ease  
 
 
-> Requires Node 6+
+> Supports Node 8+
 
 <img width="768" alt="maps and charts with d3-node" src="https://cloud.githubusercontent.com/assets/425966/24722031/2a424edc-1a10-11e7-96a5-cd68ff335017.png">
 
