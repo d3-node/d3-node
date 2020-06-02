@@ -1,6 +1,6 @@
 {
   "name": "d3-node",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Server-side D3 with ease",
   "main": "src/index.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "mocha": "5.2.0",
+    "mocha": "^7.2.0",
     "svg2png": "4.1.1",
     "topojson": "^1.6.27"
   },
