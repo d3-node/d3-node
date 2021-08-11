@@ -1,13 +1,13 @@
 # D3-Node  
-[![Build Status](https://travis-ci.org/d3-node/d3-node.svg?branch=master)](https://travis-ci.org/d3-node/d3-node)
-[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.org/d3-node/d3-node)
+[![Build Status](https://www.travis-ci.com/d3-node/d3-node.svg?branch=master)](https://travis-ci.com/d3-node/d3-node)
+[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.com/d3-node/d3-node)
 [![npm](https://img.shields.io/npm/dm/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 [![npm](https://img.shields.io/npm/l/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 
 Server-side D3 with ease  
 
 
-> Supports Node 8+
+> Tested on Nodejs v10 & up
 
 <img width="768" alt="maps and charts with d3-node" src="https://cloud.githubusercontent.com/assets/425966/24722031/2a424edc-1a10-11e7-96a5-cd68ff335017.png">
 
