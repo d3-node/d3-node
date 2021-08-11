@@ -1,6 +1,6 @@
 {
   "name": "d3-node",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Server-side D3 with ease",
   "main": "src/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
   "license": "MIT",
   "dependencies": {
-    "d3": "5.4.0",
+    "d3": "^5.16.0",
     "jsdom": "^9.12.0"
   },
   "devDependencies": {
