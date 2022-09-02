@@ -1,24 +1,13 @@
-const jsDom = require('jsdom')
+const jsdom = require('jsdom')
+const { JSDOM } = jsdom
 const d3 = require('d3')
 
 module.exports = D3Node
 
 module.exports.d3 = d3
-module.exports.jsDom = jsDom
-
-function fixXmlCase (text) {
-  // Fix a jsdom issue where all SVG tagNames are lowercased:
-  // https://github.com/tmpvar/jsdom/issues/620
-  var tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
-  for (var i = 0, l = tagNames.length; i < l; i++) {
-    var tagName = tagNames[i]
-    text = text.replace(
-      new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
-      function (all, start) {
-        return start + tagName
-      })
-  }
-  return text
+module.exports.JSDOM = JSDOM
+function fixEscapedCData (text) {
+  return text.replace(/&lt;!\[CDATA\[(.*?)\]\]&gt;/g, '<![CDATA[$1]]>')
 }
 
 function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '', canvasModule = '' } = {}) {
@@ -34,10 +23,11 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
   }
 
   // setup DOM
-  let document = jsDom.jsdom()
+  let jsDom = new JSDOM()
   if (container) {
-    document = jsDom.jsdom(container)
+    jsDom = new JSDOM(container)
   }
+  const document = jsDom.window.document
 
   // setup d3 selection
   let d3Element = d3Module.select(document.body)
@@ -46,6 +36,7 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
   }
 
   this.options = { d3Module, selector, container, styles, canvasModule }
+  this.jsDom = jsDom
   this.document = document
   this.window = document.defaultView
   this.d3Element = d3Element
@@ -96,14 +87,13 @@ D3Node.prototype.createCanvas = function (width, height) {
 
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
-    // temp until: https://github.com/tmpvar/jsdom/issues/1368
-    return fixXmlCase(this.d3Element.select('svg').node().outerHTML)
+    return fixEscapedCData(this.d3Element.select('svg').node().outerHTML)
   }
   return ''
 }
 
 D3Node.prototype.html = function () {
-  return jsDom.serializeDocument(this.document)
+  return this.jsDom.serialize()
 }
 
 D3Node.prototype.chartHTML = function () {
