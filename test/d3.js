@@ -4,7 +4,6 @@
 const assert = require('assert')
 const D3Node = require('../src')
 const d3 = D3Node.d3
-const d3Legacy = require('d3-legacy')
 
 describe('Using d3 functions', function () {
   var d3n = new D3Node()
@@ -27,12 +26,5 @@ describe('d3.version', function () {
   it('should be 5.x', function () {
     var d3n = new D3Node()
     assert.equal(d3n.d3.version.split('.')[0], '5')
-  })
-})
-
-describe('d3.version (legacy)', function () {
-  it('should be 3.x', function () {
-    var d3n = new D3Node({d3Module: d3Legacy})
-    assert.equal(d3n.d3.version.split('.')[0], '3')
   })
 })
