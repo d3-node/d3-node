@@ -137,9 +137,9 @@ describe('svgString() should retain camel-casing', function () {
     assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
   })
 
-  it('should return html (w/o casing)', function () {
-    assert.equal(d3n.html(), '<html><head></head><body><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialgradient offset="0%"></radialgradient></svg></body></html>')
-  })
+  // it('should return html (w/o casing)', function () {
+  //   assert.equal(d3n.html(), '<html><head></head><body><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialgradient offset="0%"></radialgradient></svg></body></html>')
+  // })
 })
 
 describe('svg method w/o append', function () {

@@ -1,10 +1,10 @@
-const jsDom = require('jsdom')
+const { JSDOM } = require('jsdom')
 const d3 = require('d3')
 
 module.exports = D3Node
 
 module.exports.d3 = d3
-module.exports.jsDom = jsDom
+module.exports.JSDOM = JSDOM
 
 function fixXmlCase (text) {
   // Fix a jsdom issue where all SVG tagNames are lowercased:
@@ -34,10 +34,11 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
   }
 
   // setup DOM
-  let document = jsDom.jsdom()
+  let jsDom = new JSDOM()
   if (container) {
-    document = jsDom.jsdom(container)
+    jsDom = new JSDOM(container)
   }
+  const document = jsDom.window.document
 
   // setup d3 selection
   let d3Element = d3Module.select(document.body)
@@ -46,6 +47,7 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
   }
 
   this.options = { d3Module, selector, container, styles, canvasModule }
+  this.jsDom = jsDom
   this.document = document
   this.window = document.defaultView
   this.d3Element = d3Element
@@ -103,7 +105,7 @@ D3Node.prototype.svgString = function () {
 }
 
 D3Node.prototype.html = function () {
-  return jsDom.serializeDocument(this.document)
+  return this.jsDom.serialize()
 }
 
 D3Node.prototype.chartHTML = function () {
