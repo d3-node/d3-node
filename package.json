@@ -8,6 +8,7 @@
     "test": "npm run lint && mocha test",
     "format": "standard --fix"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "http://github.com/bradoyler/d3-node.git"
@@ -21,7 +22,7 @@
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
   "license": "MIT",
   "dependencies": {
-    "d3": "^5.16.0",
+    "d3": "^7.6.1",
     "jsdom": "^16.7.0"
   },
   "devDependencies": {
