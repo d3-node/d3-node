@@ -1,9 +1,9 @@
 // mocha test/basic -R List
 /* global describe, it */
 
-const assert = require('assert')
-const D3Node = require('../src')
-const d3 = D3Node.d3
+import * as assert from 'assert'
+import {D3Node} from '../src/index.js'
+import * as d3 from 'd3'
 
 describe('Using d3 functions', function () {
   var d3n = new D3Node()
@@ -19,12 +19,5 @@ describe('Using d3 functions', function () {
   it('should not have svg tag', function () {
     var svg = d3n.svgString()
     assert.equal(svg, '')
-  })
-})
-
-describe('d3.version', function () {
-  it('should be 5.x', function () {
-    var d3n = new D3Node()
-    assert.equal(d3n.d3.version.split('.')[0], '5')
   })
 })

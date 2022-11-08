@@ -1,9 +1,9 @@
 // mocha test -R List
 /* global describe, it */
 
-const assert = require('assert')
-const D3Node = require('../src')
-const d3 = require('d3')
+import * as assert from 'assert'
+import {D3Node} from '../src/index.js'
+import * as d3 from 'd3'
 
 describe('Append nothing', function () {
   var d3n = new D3Node()
