@@ -4,6 +4,9 @@
   "description": "Server-side D3 with ease",
   "main": "src/index.js",
   "type": "module",
+  "publishConfig": {
+    "@lionkeng:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "lint": "eslint src/",
     "test": "npm run lint && mocha test",
