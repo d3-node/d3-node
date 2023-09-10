@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom'
 import * as d3 from 'd3'
-
+import serialize from 'w3c-xmlserializer'
 // const { JSDOM } = require('jsdom')
 // const d3 = require('d3')
 
@@ -8,7 +8,7 @@ import * as d3 from 'd3'
 // module.exports.JSDOM = JSDOM
 export { d3, JSDOM }
 
-function fixXmlCase(text) {
+function fixLtGt(text) {
   text = text.replace(/&lt;/g, '<')
   text = text.replace(/&gt;/g, '>')
   return text
@@ -101,8 +101,13 @@ D3Node.prototype.createCanvas = function (width, height) {
 }
 
 D3Node.prototype.svgString = function () {
-  if (this.d3Element.select('svg').node()) {
-    return fixXmlCase(this.d3Element.select('svg').node().outerHTML)
+  const node = this.d3Element.select('svg').node()
+  if (node) {
+    const serialized = serialize(node)
+    if (this.options.styles) {
+      return fixLtGt(serialized)
+    }
+    return serialized
   }
   return ''
 }

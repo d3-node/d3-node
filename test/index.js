@@ -88,7 +88,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
     d3n.createSVG().append('g')
 
     const expected =
-      '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g/></svg>'
     const actual = d3n.svgString()
     equal(actual, expected)
   })
@@ -107,7 +107,7 @@ describe('createSVG (w/ styles)', function () {
     d3n.createSVG().append('g')
 
     const expected =
-      '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g/></svg>'
     const actual = d3n.svgString()
     equal(actual, expected)
   })
@@ -120,7 +120,7 @@ describe('createSVG (w/ width & height)', function () {
     d3n.createSVG(100, 100).append('g')
 
     const expected =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g/></svg>'
     const actual = d3n.svgString()
     equal(actual, expected)
   })
@@ -135,7 +135,7 @@ describe('createSVG (w/ width & viewBox)', function () {
       .append('g')
 
     const expected =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 574 308"><g></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 574 308"><g/></svg>'
     const actual = d3n.svgString()
     equal(actual, expected)
   })
@@ -152,7 +152,7 @@ describe('svgString() should retain camel-casing', function () {
   it('should return svg', function () {
     equal(
       d3n.svgString(),
-      '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"/></svg>'
     )
   })
 })
