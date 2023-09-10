@@ -1,3 +1,16 @@
 {
-    "extends": "standard"
+    "extends": "standard",
+    "rules": {
+        "space-before-function-paren": "off",
+        "comma-dangle": "off"
+    }
 }
+
+
+
+
+
+
+
+
+

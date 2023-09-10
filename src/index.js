@@ -1,30 +1,33 @@
-const { JSDOM } = require('jsdom')
-const d3 = require('d3')
+import { JSDOM } from 'jsdom'
+import * as d3 from 'd3'
 
-module.exports = D3Node
+// const { JSDOM } = require('jsdom')
+// const d3 = require('d3')
 
-module.exports.d3 = d3
-module.exports.JSDOM = JSDOM
+// module.exports.d3 = d3
+// module.exports.JSDOM = JSDOM
+export { d3, JSDOM }
 
-function fixXmlCase (text) {
-  // Fix a jsdom issue where all SVG tagNames are lowercased:
-  // https://github.com/tmpvar/jsdom/issues/620
-  var tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
-  for (var i = 0, l = tagNames.length; i < l; i++) {
-    var tagName = tagNames[i]
-    text = text.replace(
-      new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
-      function (all, start) {
-        return start + tagName
-      })
-  }
+function fixXmlCase(text) {
+  text = text.replace(/&lt;/g, '<')
+  text = text.replace(/&gt;/g, '>')
   return text
 }
 
-function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '', canvasModule = '' } = {}) {
+export default function D3Node({
+  d3Module = d3,
+  selector = '',
+  container = '',
+  styles = '',
+  svgStyles = '',
+  canvasModule = '',
+} = {}) {
   // deprecates props
-  if (svgStyles && !styles) { // deprecated svgStyles option
-    console.warn('WARNING: svgStyles is deprecated, please use styles instead !!')
+  if (svgStyles && !styles) {
+    // deprecated svgStyles option
+    console.warn(
+      'WARNING: svgStyles is deprecated, please use styles instead !!'
+    )
     styles = svgStyles
   }
 
@@ -55,12 +58,12 @@ function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', sv
 }
 
 D3Node.prototype.createSVG = function (width, height, attrs) {
-  const svg = this.d3Element.append('svg')
+  const svg = this.d3Element
+    .append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
 
   if (width && height) {
-    svg.attr('width', width)
-      .attr('height', height)
+    svg.attr('width', width).attr('height', height)
   }
 
   if (attrs) {
@@ -70,7 +73,8 @@ D3Node.prototype.createSVG = function (width, height, attrs) {
   }
 
   if (this.options.styles) {
-    svg.append('defs')
+    svg
+      .append('defs')
       .append('style')
       .attr('type', 'text/css')
       .text(`<![CDATA[ ${this.options.styles} ]]>`)
@@ -98,7 +102,6 @@ D3Node.prototype.createCanvas = function (width, height) {
 
 D3Node.prototype.svgString = function () {
   if (this.d3Element.select('svg').node()) {
-    // temp until: https://github.com/tmpvar/jsdom/issues/1368
     return fixXmlCase(this.d3Element.select('svg').node().outerHTML)
   }
   return ''
