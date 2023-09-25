@@ -1,10 +1,10 @@
 # D3-Node  
-[![Build Status](https://www.travis-ci.com/d3-node/d3-node.svg?branch=master)](https://travis-ci.com/d3-node/d3-node)
+[![Build Status](https://github.com/d3-node/d3-node/actions/workflows/node.js.yml/badge.svg)](https://github.com/d3-node/d3-node/actions/workflows/node.js.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.com/d3-node/d3-node)
 [![npm](https://img.shields.io/npm/dm/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 [![npm](https://img.shields.io/npm/l/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 
-Server-side D3 with ease  
+Server-side D3 with ease  
 
 
 > Tested on Nodejs v10 & up
