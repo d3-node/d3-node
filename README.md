@@ -7,7 +7,7 @@
 Server-side D3 with ease  
 
 
-> Tested on Nodejs v14 & up
+> Tested on Nodejs v16 & up
 
 <img width="768" alt="maps and charts with d3-node" src="https://cloud.githubusercontent.com/assets/425966/24722031/2a424edc-1a10-11e7-96a5-cd68ff335017.png">
 
