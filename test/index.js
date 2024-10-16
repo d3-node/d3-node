@@ -1,16 +1,16 @@
 // mocha test -R List
 /* global describe, it */
 
-const assert = require('assert')
-const D3Node = require('../src')
-const d3 = require('d3')
+import * as assert from 'assert'
+import { D3Node } from '../src/index.js'
+import * as d3 from 'd3'
 
 describe('Append nothing', function () {
   var d3n = new D3Node()
   it('should have tags default empty', function () {
     var expected = '<html><head></head><body></body></html>'
     var actual = d3n.html()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 })
 
@@ -22,12 +22,12 @@ describe('Append span (defaults)', function () {
   it('should have span tag', function () {
     var expected = '<html><head></head><body><span></span></body></html>'
     var actual = d3n.html()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 
   it('should not have svg tag', function () {
     var svg = d3n.svgString()
-    assert.equal(svg, '')
+    assert.strictEqual(svg, '')
   })
 })
 
@@ -39,11 +39,11 @@ describe('Append span (w/ container)', function () {
   it('should have span tag', function () {
     var expected = '<html><head></head><body><div id="container"><div id="chart"><span></span></div></div></body></html>'
     var actual = d3n.html()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 
   it('should return chart html by selector', function () {
-    assert.equal(d3n.chartHTML(), '<div id="chart"><span></span></div>')
+    assert.strictEqual(d3n.chartHTML(), '<div id="chart"><span></span></div>')
   })
 })
 
@@ -59,11 +59,11 @@ describe('Set D3 styles (2 instances)', function () {
   var actual = d3a.html()
 
   it('should have color:red', function () {
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 
   it('should have color:black', function () {
-    assert.equal(actual1, expected1)
+    assert.strictEqual(actual1, expected1)
   })
 })
 
@@ -81,7 +81,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 })
 
@@ -99,7 +99,7 @@ describe('createSVG (w/ styles)', function () {
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 })
 
@@ -111,7 +111,7 @@ describe('createSVG (w/ width & height)', function () {
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 })
 
@@ -119,11 +119,11 @@ describe('createSVG (w/ width & viewBox)', function () {
   it('should return svg', function () {
     var d3n = new D3Node()
 
-    d3n.createSVG(null, null, {width: '100%', viewBox: '0 0 574 308'}).append('g')
+    d3n.createSVG(null, null, { width: '100%', viewBox: '0 0 574 308' }).append('g')
 
     var expected = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 574 308"><g></g></svg>'
     var actual = d3n.svgString()
-    assert.equal(actual, expected)
+    assert.strictEqual(actual, expected)
   })
 })
 
@@ -134,7 +134,7 @@ describe('svgString() should retain camel-casing', function () {
     .append('radialGradient').attr('offset', '0%')
 
   it('should return svg', function () {
-    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
+    assert.strictEqual(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="true"><radialGradient offset="0%"></radialGradient></svg>')
   })
 
   // it('should return html (w/o casing)', function () {
@@ -145,7 +145,7 @@ describe('svgString() should retain camel-casing', function () {
 describe('svg method w/o append', function () {
   var d3n = new D3Node()
   it('should return empty', function () {
-    assert.equal(d3n.svgString(), '')
+    assert.strictEqual(d3n.svgString(), '')
   })
 })
 
@@ -154,6 +154,6 @@ describe('svg method via auto-init', function () {
   d3n.createSVG().append('g').text('test')
 
   it('should return svg element', function () {
-    assert.equal(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>')
+    assert.strictEqual(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>')
   })
 })
