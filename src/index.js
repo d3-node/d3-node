@@ -1,10 +1,5 @@
-const { JSDOM } = require('jsdom')
-const d3 = require('d3')
-
-module.exports = D3Node
-
-module.exports.d3 = d3
-module.exports.JSDOM = JSDOM
+import * as d3 from 'd3'
+import { JSDOM } from 'jsdom'
 
 function fixXmlCase (text) {
   // Fix a jsdom issue where all SVG tagNames are lowercased:
@@ -21,7 +16,7 @@ function fixXmlCase (text) {
   return text
 }
 
-function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '', canvasModule = '' } = {}) {
+export function D3Node ({ d3Module = d3, selector = '', container = '', styles = '', svgStyles = '', canvasModule = '' } = {}) {
   // deprecates props
   if (svgStyles && !styles) { // deprecated svgStyles option
     console.warn('WARNING: svgStyles is deprecated, please use styles instead !!')

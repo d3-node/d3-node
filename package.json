@@ -1,13 +1,14 @@
 {
   "name": "d3-node",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Server-side D3 with ease",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "eslint src/*.js",
     "test": "npm run lint && mocha test",
     "format": "standard --fix"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "http://github.com/bradoyler/d3-node.git"
@@ -21,10 +22,11 @@
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
   "license": "MIT",
   "dependencies": {
-    "d3": "^5.16.0",
+    "d3": "^7.9.0",
     "jsdom": "^16.7.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "eslint": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
