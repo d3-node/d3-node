@@ -1,5 +1,6 @@
-const D3Node = require('./../src')
-const d3 = require('d3')
+import { D3Node } from '../src/index.js'
+import * as d3 from 'd3'
+import output from './lib/output.js'
 
 const markup = '<div id="container"><h3>U.S. States</h3><div id="statesgrid"></div></div>'
 
@@ -91,4 +92,4 @@ gridCell.append('text').attr('dy', '.35em')
   })
 
 // create output files
-require('./lib/output')('datagrid-states', d3n)
+output('datagrid-states', d3n)

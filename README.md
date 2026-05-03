@@ -1,6 +1,6 @@
 # D3-Node  
 [![Build Status](https://github.com/d3-node/d3-node/actions/workflows/node.js.yml/badge.svg)](https://github.com/d3-node/d3-node/actions/workflows/node.js.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://travis-ci.com/d3-node/d3-node)
+[![Codecov](https://img.shields.io/codecov/c/github/d3-node/d3-node.svg)](https://codecov.io/gh/d3-node/d3-node)
 [![npm](https://img.shields.io/npm/dm/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 [![npm](https://img.shields.io/npm/l/d3-node.svg)](https://www.npmjs.com/package/d3-node)
 
@@ -33,7 +33,7 @@ __Create a SVG__
  import { D3Node } from 'd3-node' // const D3Node = require('d3-node')
  const d3n = new D3Node()      // initializes D3 with container element
  d3n.createSVG(10,20).append('g') // create SVG w/ 'g' tag and width/height
- d3n.svgString() // output: <svg width=10 height=20 xmlns="http://www.w3.org/2000/svg"><g></g></svg>
+ d3n.svgString() // output: <svg width="10" height="20" xmlns="http://www.w3.org/2000/svg"><g></g></svg>
 ```
 
 ### Advanced usage
@@ -45,7 +45,7 @@ __Setting container & insertion point via selector__
  const d3n = new D3Node(options) // initializes D3 with container element
  const d3 = d3n.d3
  d3.select(d3n.document.querySelector('#chart')).append('span') // insert span tag into #chart
- d3n.html()   // output: <html><body><div id="container"><div id="chart"><span></span></div></div></body></html>
+ d3n.html()   // output: <html><head></head><body><div id="container"><div id="chart"><span></span></div></div></body></html>
  d3n.chartHTML()   // output: <div id="chart"><span></span></div>
 ```
 
@@ -64,7 +64,7 @@ __Inline SVG styles__
      <style type="text/css"><![CDATA[ .test{fill:#000;} ]]></style>
    </defs>
    <g></g>
-<svg>
+</svg>
 ```
 
 __Create a canvas (for generating a png)__

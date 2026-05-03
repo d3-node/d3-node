@@ -1,6 +1,10 @@
+import { createRequire } from 'module'
+import { D3Node } from '../src/index.js'
+import output from './lib/output.js'
+
+const require = createRequire(import.meta.url)
 const topojson = require('topojson')
 const topo = require('./data/va-counties.json')
-const D3Node = require('./../src')
 const d3 = require('d3-legacy')
 
 // adapted from: http://bl.ocks.org/mbostock/7061976
@@ -45,4 +49,4 @@ svg.append('path')
   .attr('d', path)
 
 // create output files
-require('./lib/output')('map-counties', d3n)
+output('map-counties', d3n)

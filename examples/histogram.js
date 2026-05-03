@@ -1,5 +1,6 @@
-const D3Node = require('./../src')
-const d3 = require('d3')
+import { D3Node } from '../src/index.js'
+import * as d3 from 'd3'
+import output from './lib/output.js'
 
 const styles = `
 .bar rect {
@@ -23,7 +24,7 @@ var data = d3.range(1000).map(d3.randomBates(10))
 
 var formatCount = d3.format(',.0f')
 
-var margin = {top: 10, right: 30, bottom: 30, left: 30}
+var margin = { top: 10, right: 30, bottom: 30, left: 30 }
 var width = 960 - margin.left - margin.right
 var height = 500 - margin.top - margin.bottom
 
@@ -69,4 +70,4 @@ svg.append('g')
   .call(d3.axisBottom(x))
 
 // create output files
-require('./lib/output')('histogram', d3n)
+output('histogram', d3n)

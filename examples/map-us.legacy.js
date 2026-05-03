@@ -1,6 +1,10 @@
+import { createRequire } from 'module'
+import { D3Node } from '../src/index.js'
+import output from './lib/output.js'
+
+const require = createRequire(import.meta.url)
 const topojson = require('topojson')
 const us = require('./data/us-states.json') // source: https://github.com/bradoyler/atlas-make/tree/master/us-states
-const D3Node = require('./../src')
 const d3 = require('d3-legacy')
 
 // adapted from: http://bl.ocks.org/bradoyler/bae6adf4e1e74c925ea20bf6026614b3
@@ -22,4 +26,4 @@ d3n.createSVG(width, height)
   .attr('d', path)
 
 // create output files
-require('./lib/output')('map-us.legacy', d3n)
+output('map-us.legacy', d3n)

@@ -1,11 +1,15 @@
+import { createRequire } from 'module'
+import { D3Node } from '../src/index.js'
+import * as d3 from 'd3'
+import output from './lib/output.js'
+
+const require = createRequire(import.meta.url)
 const topojson = require('topojson')
-const topo = require('./data/congress.json') // source: https://github.com/bradoyler/atlas-make/tree/master/us-states
-const D3Node = require('./../src')
-const d3 = require('d3')
+const topo = require('./data/congress.json')// source: https://github.com/bradoyler/atlas-make/tree/master/us-states
 
 // adapted from: http://bl.ocks.org/bradoyler/e9d70c6b1ce76e1ba8b83d94cfd4296c
 
-const options = {d3Module: d3}
+const options = { d3Module: d3 }
 
 const d3n = new D3Node(options)
 
@@ -34,4 +38,4 @@ svg.selectAll('.region')
   .style('stroke-width', '0.6px')
 
 // create output files
-require('./lib/output')('map-congress', d3n)
+output('map-congress', d3n)

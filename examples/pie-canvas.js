@@ -1,8 +1,13 @@
-const fs = require('fs')
-const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString()
-const D3Node = require('./../src')
-const d3 = require('d3')
+import fs from 'fs'
+import { createRequire } from 'module'
+import { D3Node } from '../src/index.js'
+import * as d3 from 'd3'
+import output from './lib/output.js'
+
+const require = createRequire(import.meta.url)
 const canvasModule = require('canvas') // must npm install node-canvas
+
+const csvString = fs.readFileSync('examples/data/piechart.csv', 'UTF-8').toString()
 
 var options = { canvasModule }
 
@@ -62,7 +67,7 @@ arcs.forEach(function (d) {
   context.fillText(d.data.age, c[0], c[1])
 })
 
-/// -- end D3 code
+// -- end D3 code
 
 // create output files
-require('./lib/output')('pie-canvas', d3n)
+output('pie-canvas', d3n)

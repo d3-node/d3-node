@@ -25,7 +25,7 @@ export function D3Node ({ d3Module = d3, selector = '', container = '', styles =
 
   // auto-new instance, so we always have 'this'
   if (!(this instanceof D3Node)) {
-    return new D3Node({ d3Module, selector, container, styles })
+    return new D3Node({ d3Module, selector, container, styles, svgStyles, canvasModule })
   }
 
   // setup DOM
@@ -104,5 +104,8 @@ D3Node.prototype.html = function () {
 }
 
 D3Node.prototype.chartHTML = function () {
+  if (!this.options.selector) {
+    throw new Error('chartHTML() requires a selector option')
+  }
   return this.document.querySelector(this.options.selector).outerHTML
 }
