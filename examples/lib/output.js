@@ -18,7 +18,7 @@ export default function (outputName, d3n) {
 
   const svgBuffer = Buffer.from(d3n.svgString(), 'utf-8')
   svg2png(svgBuffer)
-    .then(buffer => fs.writeFile('examples/dist/' + outputName + '.png', buffer))
-    .catch(e => console.error('ERR:', e))
+    .then(buffer => fs.promises.writeFile('examples/dist/' + outputName + '.png', buffer))
     .then(() => console.log('>> Exported: "examples/dist/' + outputName + '.png"'))
+    .catch(e => console.error('ERR:', e))
 }
