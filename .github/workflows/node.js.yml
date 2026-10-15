@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [23.x, 24.x] # v26.x is broken
+        node-version: [22.x, 24.x] # v26.x is broken
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
