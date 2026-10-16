@@ -21,7 +21,12 @@ describe('SVG example PNG export', function () {
         d3n.createSVG(12, 8).append('rect')
           .attr('width', 12).attr('height', 8).attr('fill', 'red')
         output('chart', d3n)
-      `], { cwd: directory, encoding: 'utf8' })
+      `], {
+        cwd: directory,
+        encoding: 'utf8',
+        // PhantomJS's OpenSSL 1.x cannot load the host's OpenSSL 3 providers.
+        env: { ...process.env, OPENSSL_CONF: os.devNull }
+      })
       const png = fs.readFileSync(path.join(directory, 'examples', 'dist', 'chart.png'))
       assert.deepStrictEqual(png.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))
       assert.strictEqual(png.readUInt32BE(16), 12)
