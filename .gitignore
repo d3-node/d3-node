@@ -1,5 +1,7 @@
+.DS_Store
 node_modules/*
 .idea/
 npm-debug.log
 examples/dist/*.html
 examples/dist/*.png
+
