@@ -23,9 +23,7 @@ describe('SVG example PNG export', function () {
         output('chart', d3n)
       `], {
         cwd: directory,
-        encoding: 'utf8',
-        // PhantomJS's OpenSSL 1.x cannot load the host's OpenSSL 3 providers.
-        env: { ...process.env, OPENSSL_CONF: os.devNull }
+        encoding: 'utf8'
       })
       const png = fs.readFileSync(path.join(directory, 'examples', 'dist', 'chart.png'))
       assert.deepStrictEqual(png.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))

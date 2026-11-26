@@ -1,8 +1,6 @@
 # Examples
 
-Most examples derive from examples @ [bl.ocks.org](https://bl.ocks.org/)
-
-note: some examples use d3 v3.5, which is used via `require('d3-legacy')`
+Most examples derive from classic D3 examples.
 
 ### Bar Chart
 
@@ -17,7 +15,7 @@ source: https://github.com/d3-node/d3node-barchart
 #### Run it
 
 ```
-$ node examples/map-counties
+$ node examples/map-counties.js
 ```
 
 #### Output
@@ -33,7 +31,7 @@ $ node examples/map-counties
 #### Run it
 
 ```
-$ node examples/map-us
+$ node examples/map-us.js
 ```
 
 #### Output

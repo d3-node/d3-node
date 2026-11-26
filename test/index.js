@@ -79,7 +79,7 @@ describe('createSVG (w/ svgStyles) 1', function () {
 
     d3n.createSVG().append('g')
 
-    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test1{} ]]></style></defs><g></g></svg>'
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css">.test1{}</style></defs><g></g></svg>'
     var actual = d3n.svgString()
     assert.strictEqual(actual, expected)
   })
@@ -97,7 +97,7 @@ describe('createSVG (w/ styles)', function () {
 
     d3n.createSVG().append('g')
 
-    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css"><![CDATA[ .test2{} ]]></style></defs><g></g></svg>'
+    var expected = '<svg xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css">.test2{}</style></defs><g></g></svg>'
     var actual = d3n.svgString()
     assert.strictEqual(actual, expected)
   })
@@ -155,5 +155,31 @@ describe('svg method via auto-init', function () {
 
   it('should return svg element', function () {
     assert.strictEqual(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg"><g>test</g></svg>')
+  })
+})
+
+describe('createSVG (w/ 0 and single dimensions)', function () {
+  it('should set width="0" and height="50"', function () {
+    const d3n = new D3Node()
+    d3n.createSVG(0, 50)
+    assert.strictEqual(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="50"></svg>')
+  })
+
+  it('should set only width when height is omitted', function () {
+    const d3n = new D3Node()
+    d3n.createSVG(100)
+    assert.strictEqual(d3n.svgString(), '<svg xmlns="http://www.w3.org/2000/svg" width="100"></svg>')
+  })
+})
+
+describe('chartHTML() error handling', function () {
+  it('should throw when selector is missing', function () {
+    const d3n = new D3Node()
+    assert.throws(() => d3n.chartHTML(), /requires a selector option/)
+  })
+
+  it('should throw when selector does not match any element', function () {
+    const d3n = new D3Node({ selector: '#missing', container: '<div id="chart"></div>' })
+    assert.throws(() => d3n.chartHTML(), /could not find element matching selector "#missing"/)
   })
 })

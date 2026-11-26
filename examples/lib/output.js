@@ -1,8 +1,5 @@
 import fs from 'fs'
-import { createRequire } from 'module'
-
-const require = createRequire(import.meta.url)
-const svg2png = require('svg2png')
+import { Resvg } from '@resvg/resvg-js'
 
 export default function (outputName, d3n) {
   if (d3n.options.canvas) {
@@ -16,9 +13,9 @@ export default function (outputName, d3n) {
     console.log('>> Done. Open "examples/dist/' + outputName + '.html" in a web browser')
   })
 
-  const svgBuffer = Buffer.from(d3n.svgString(), 'utf-8')
-  svg2png(svgBuffer)
-    .then(buffer => fs.promises.writeFile('examples/dist/' + outputName + '.png', buffer))
+  const resvg = new Resvg(d3n.svgString())
+  const pngBuffer = resvg.render().asPng()
+  fs.promises.writeFile('examples/dist/' + outputName + '.png', pngBuffer)
     .then(() => console.log('>> Exported: "examples/dist/' + outputName + '.png"'))
     .catch(e => console.error('ERR:', e))
 }

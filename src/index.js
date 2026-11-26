@@ -4,9 +4,8 @@ import { JSDOM } from 'jsdom'
 function fixXmlCase (text) {
   // Fix a jsdom issue where all SVG tagNames are lowercased:
   // https://github.com/tmpvar/jsdom/issues/620
-  var tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
-  for (var i = 0, l = tagNames.length; i < l; i++) {
-    var tagName = tagNames[i]
+  const tagNames = ['linearGradient', 'radialGradient', 'clipPath', 'textPath']
+  for (const tagName of tagNames) {
     text = text.replace(
       new RegExp('(<|</)' + tagName.toLowerCase() + '\\b', 'g'),
       function (all, start) {
@@ -53,9 +52,12 @@ D3Node.prototype.createSVG = function (width, height, attrs) {
   const svg = this.d3Element.append('svg')
     .attr('xmlns', 'http://www.w3.org/2000/svg')
 
-  if (width && height) {
+  if (width != null) {
     svg.attr('width', width)
-      .attr('height', height)
+  }
+
+  if (height != null) {
+    svg.attr('height', height)
   }
 
   if (attrs) {
@@ -68,7 +70,7 @@ D3Node.prototype.createSVG = function (width, height, attrs) {
     svg.append('defs')
       .append('style')
       .attr('type', 'text/css')
-      .text(`<![CDATA[ ${this.options.styles} ]]>`)
+      .text(this.options.styles)
   }
   return svg
 }
@@ -107,5 +109,9 @@ D3Node.prototype.chartHTML = function () {
   if (!this.options.selector) {
     throw new Error('chartHTML() requires a selector option')
   }
-  return this.document.querySelector(this.options.selector).outerHTML
+  const el = this.document.querySelector(this.options.selector)
+  if (!el) {
+    throw new Error(`chartHTML() could not find element matching selector "${this.options.selector}"`)
+  }
+  return el.outerHTML
 }

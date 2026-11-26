@@ -7,7 +7,7 @@
 Server-side D3 with ease  
 
 
-> Tested on Nodejs v16 & up
+> Tested on Node.js v22 & up
 
 <img width="768" alt="maps and charts with d3-node" src="https://cloud.githubusercontent.com/assets/425966/24722031/2a424edc-1a10-11e7-96a5-cd68ff335017.png">
 
@@ -21,7 +21,7 @@ Server-side D3 with ease
 - Take advantage of the entire ecosystem: [npmjs.com](https://www.npmjs.com/)
 - Static rendering of [Data-Driven Documents (D3.js)](https://d3js.org/)
 - Portable SVG with [embedded stylesheets](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
-- Easily adapt examples from [bl.ocks.org](http://bl.ocks.org/)
+- Easily adapt examples from [Observable / D3 Gallery](https://observablehq.com/@d3/gallery)
 
 ### Basic usage:
 
@@ -61,7 +61,7 @@ __Inline SVG styles__
 ```html
 <svg xmlns="http://www.w3.org/2000/svg">
    <defs>
-     <style type="text/css"><![CDATA[ .test{fill:#000;} ]]></style>
+     <style type="text/css">.test {fill:#000;}</style>
    </defs>
    <g></g>
 </svg>
@@ -69,12 +69,16 @@ __Inline SVG styles__
 
 __Create a canvas (for generating a png)__
 ```javascript
- const canvasModule = require('canvas'); // supports node-canvas v1 & v2.x
- const d3n = new D3Node({ canvasModule }); // pass it node-canvas
- const canvas = d3n.createCanvas(960, 500);
- const context = canvas.getContext('2d');
+ import { createRequire } from 'module'
+ import { D3Node } from 'd3-node'
+
+ const require = createRequire(import.meta.url)
+ const canvasModule = require('canvas') // supports node-canvas v1 & v2.x
+ const d3n = new D3Node({ canvasModule }) // pass it node-canvas
+ const canvas = d3n.createCanvas(960, 500)
+ const context = canvas.getContext('2d')
  // draw on your canvas, then output canvas to png
- canvas.pngStream().pipe(fs.createWriteStream('output.png'));
+ canvas.pngStream().pipe(fs.createWriteStream('output.png'))
 ```
 
 ### [See examples for more...](examples)
@@ -84,9 +88,3 @@ __Create a canvas (for generating a png)__
 ```
 $ npm test
 ```
-
-### TODOs:
-
-- Add more examples: (remote data, world map)
-- Create Gulp task
-- Add option to inject css/js into html output

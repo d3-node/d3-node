@@ -4,9 +4,9 @@
   "description": "Server-side D3 with ease",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/*.js",
-    "test": "npm run lint && mocha test",
-    "format": "standard --fix"
+    "lint": "eslint src/*.js test/*.js",
+    "lint:fix": "eslint --fix src/*.js test/*.js",
+    "test": "npm run lint && mocha test"
   },
   "type": "module",
   "repository": {
@@ -23,9 +23,10 @@
   "license": "MIT",
   "dependencies": {
     "d3": "^7.9.0",
-    "jsdom": "^16.7.0"
+    "jsdom": "^31.0.1"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/d3": "^7.4.3",
     "eslint": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -34,7 +35,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^11.8.0",
-    "svg2png": "4.1.1",
     "topojson": "^1.6.27"
   },
   "bugs": {
