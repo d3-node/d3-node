@@ -28,7 +28,7 @@
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
     "@types/d3": "^7.4.3",
-    "eslint": "^6.7.0",
+    "eslint": "^10.15.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
